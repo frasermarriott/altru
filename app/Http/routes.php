@@ -17,4 +17,19 @@ Route::get('/', function () {
 
 Route::auth();
 
-Route::get('/home', 'HomeController@index');
+Route::get('/profile', 'HomeController@profile');
+
+
+// Families database
+
+Route::get('families', function(){
+	$families = App\Families::all();
+	foreach ($families as $family) {
+		echo $family->family_name;
+	}
+});
+
+Route::get('families/{id}', function($id){
+	$family = App\Families::find($id);
+	echo $family->family_name;
+});
