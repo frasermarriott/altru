@@ -78,14 +78,9 @@
                             <div class="col-md-6">
                                 
                                 <!-- Change these input types to "hidden" later -->
-                                @if($_POST['usertype'] == 'guest')
-                                    <input type="text" class="form-control" name="usertype" id="usertype" value="guest" required>
-                                @elseif($_POST['usertype'] == 'volunteer')
-                                    <input type="text" class="form-control" name="usertype" id="usertype" value="volunteer" required>
-                                @else
-                                   <input type="text" class="form-control" name="usertype" id="usertype" value="volunteer" required>
-
-                                @endif
+                        
+                                    <input type="text" class="form-control" name="usertype" id="usertype" value="{{ $usertype }}" required>
+        
                                 <!-- Change these input types to "hidden" later -->
                                 <input type="text" class="form-control" name="verified" id="verified" value="no" required>
 
@@ -100,10 +95,11 @@
                             <div class="col-md-6 col-md-offset-4">
                                 <button type="submit" class="btn btn-primary">
                                     <i class="fa fa-btn fa-user"></i>Create My Profile
-                                </button>
-                                @if($_GET['usertype'] == 'guest')
-                                    <a href="#">Need help filling in this form?</a>
+                                </button> <br>
+                                @if($usertype=='guest')
+                                <a href="#">Need help making your account?</a>
                                 @endif
+
                             </div>
                         </div>
                     </form>

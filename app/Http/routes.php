@@ -19,15 +19,19 @@ Route::get('register/usertype', function () {
     return view('auth.usertype-registration');
 });
 
-// Route::post('register/type', function() {
-// 	return view('auth.register');
-// });
-
-Route::post('register/type', 'UsertypeController@usertype');
+// Registration page with post data from the usertype selection page.
+Route::post('register/new', ['as' => 'user_path', 'uses' => 'UsertypeController@usertype']);
 
 Route::auth();
 
 Route::get('/profile', 'HomeController@profile');
+
+Route::get('/profile/edit', 'HomeController@editprofile');
+
+// This is the page the user is directed to immediately after logging in
+Route::get('/dashboard', 'HomeController@dashboard');
+
+
 
 
 

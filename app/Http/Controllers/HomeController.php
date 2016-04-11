@@ -27,4 +27,16 @@ class HomeController extends Controller
         return view('profile');
     }
 
+    public function editprofile()
+    {
+        return view('edit-profile');
+    }
+
+
+    // This is the page the user is directed to immediately after logging in
+    public function dashboard()
+    {
+        return view('dashboard');
+    }
+
 }

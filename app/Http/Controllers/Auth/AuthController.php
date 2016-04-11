@@ -30,7 +30,9 @@ class AuthController extends Controller
      */
 
     // Page that the user is redirected to when logging in
-    protected $redirectTo = '/profile';
+    // protected $redirectTo = '/profile';
+       protected $redirectTo = '/dashboard';
+
 
     /**
      * Create a new authentication controller instance.
