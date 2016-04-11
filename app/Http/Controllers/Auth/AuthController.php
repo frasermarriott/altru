@@ -28,7 +28,7 @@ class AuthController extends Controller
      *
      * @var string
      */
-    
+
     // Page that the user is redirected to when logging in
     protected $redirectTo = '/profile';
 
@@ -71,4 +71,6 @@ class AuthController extends Controller
             'password' => bcrypt($data['password']),
         ]);
     }
+
+
 }

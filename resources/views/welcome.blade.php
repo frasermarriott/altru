@@ -24,7 +24,7 @@
                         <p>test</p>
                     @else
                         <h3>Get Started</h3>
-                        <a href="{{ url('/register') }}" class="btn btn-primary">Create your Profile</a>
+                        <a href="{{ url('/register/usertype') }}" class="btn btn-primary">Create your Profile</a>
                     @endif
 
 

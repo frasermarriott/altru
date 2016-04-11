@@ -68,11 +68,42 @@
                             </div>
                         </div>
 
+
+
+                         <div class="form-group">
+
+                            <!-- delete this label later -->
+                            <label for="usertype" class="col-md-4 control-label">Usertype</label>
+
+                            <div class="col-md-6">
+                                
+                                <!-- Change these input types to "hidden" later -->
+                                @if($_POST['usertype'] == 'guest')
+                                    <input type="text" class="form-control" name="usertype" id="usertype" value="guest" required>
+                                @elseif($_POST['usertype'] == 'volunteer')
+                                    <input type="text" class="form-control" name="usertype" id="usertype" value="volunteer" required>
+                                @else
+                                   <input type="text" class="form-control" name="usertype" id="usertype" value="volunteer" required>
+
+                                @endif
+                                <!-- Change these input types to "hidden" later -->
+                                <input type="text" class="form-control" name="verified" id="verified" value="no" required>
+
+                            </div>
+                        </div>
+
+
+
+
+
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
                                 <button type="submit" class="btn btn-primary">
                                     <i class="fa fa-btn fa-user"></i>Create My Profile
                                 </button>
+                                @if($_GET['usertype'] == 'guest')
+                                    <a href="#">Need help filling in this form?</a>
+                                @endif
                             </div>
                         </div>
                     </form>

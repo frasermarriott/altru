@@ -15,12 +15,24 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('register/usertype', function () {
+    return view('auth.usertype-registration');
+});
+
+// Route::post('register/type', function() {
+// 	return view('auth.register');
+// });
+
+Route::post('register/type', 'UsertypeController@usertype');
+
 Route::auth();
 
 Route::get('/profile', 'HomeController@profile');
 
 
-// Families database
+
+
+// Families database test
 
 Route::get('families', function(){
 	$families = App\Families::all();
