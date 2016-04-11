@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', 'New Password')
+
 @section('content')
 <div class="container">
     <div class="row">
@@ -14,10 +16,10 @@
                         <input type="hidden" name="token" value="{{ $token }}">
 
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                            <label class="col-md-4 control-label">E-Mail Address</label>
+                            <label for="email" class="col-md-4 control-label">Email Address</label>
 
                             <div class="col-md-6">
-                                <input type="email" class="form-control" name="email" value="{{ $email or old('email') }}">
+                                <input type="email" class="form-control" name="email" id="email" value="{{ $email or old('email') }}">
 
                                 @if ($errors->has('email'))
                                     <span class="help-block">
@@ -28,10 +30,10 @@
                         </div>
 
                         <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                            <label class="col-md-4 control-label">Password</label>
+                            <label for="password" class="col-md-4 control-label">New Password</label>
 
                             <div class="col-md-6">
-                                <input type="password" class="form-control" name="password">
+                                <input type="password" class="form-control" name="password" id="password" placeholder="Enter a new password" required autofocus>
 
                                 @if ($errors->has('password'))
                                     <span class="help-block">
@@ -42,9 +44,9 @@
                         </div>
 
                         <div class="form-group{{ $errors->has('password_confirmation') ? ' has-error' : '' }}">
-                            <label class="col-md-4 control-label">Confirm Password</label>
+                            <label for="password_confirmation" class="col-md-4 control-label">Confirm New Password</label>
                             <div class="col-md-6">
-                                <input type="password" class="form-control" name="password_confirmation">
+                                <input type="password" class="form-control" name="password_confirmation" id="password_confirmation" placeholder="Confirm your new password" required>
 
                                 @if ($errors->has('password_confirmation'))
                                     <span class="help-block">

@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', 'Login')
+
 @section('content')
 <div class="container">
     <div class="row">
@@ -17,9 +19,11 @@
                                 <input type="email" class="form-control" name="email" id="email" placeholder="Enter your email address" value="{{ old('email') }}" required autofocus>
 
                                 @if ($errors->has('email'))
+                                <div class="alert alert-danger">
                                     <span class="help-block">
                                         <strong>{{ $errors->first('email') }}</strong>
                                     </span>
+                                    </div>
                                 @endif
                             </div>
                         </div>

@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', 'My Profile')
+
 @section('content')
 <div class="container">
     <div class="row">
@@ -9,6 +11,11 @@
 
                 <div class="panel-body">
                     Welcome, {{ ucwords(\Auth::user()->name) }}
+
+                    <div id="About Me">
+                        <h3>About Me</h3>
+                        
+                    </div>
                 </div>
             </div>
         </div>

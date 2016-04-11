@@ -25,7 +25,7 @@ Route::get('/profile', 'HomeController@profile');
 Route::get('families', function(){
 	$families = App\Families::all();
 	foreach ($families as $family) {
-		echo $family->family_name;
+		echo $family->family_name . "<br>";
 	}
 });
 
