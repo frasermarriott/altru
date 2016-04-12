@@ -72,17 +72,11 @@
 
                          <div class="form-group">
 
-                            <!-- delete this label later -->
-                            <label for="usertype" class="col-md-4 control-label">Usertype</label>
-
                             <div class="col-md-6">
-                                
-                                <!-- Change these input types to "hidden" later -->
                         
-                                    <input type="text" class="form-control" name="usertype" id="usertype" value="{{ $usertype }}" required>
+                                <input type="hidden" class="form-control" name="usertype" id="usertype" value="{{ $usertype }}" required>
         
-                                <!-- Change these input types to "hidden" later -->
-                                <input type="text" class="form-control" name="verified" id="verified" value="no" required>
+                                <input type="hidden" class="form-control" name="verified" id="verified" value="no" required>
 
                             </div>
                         </div>
