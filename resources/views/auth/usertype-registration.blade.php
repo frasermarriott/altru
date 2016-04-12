@@ -12,12 +12,7 @@
 
 
                     <div class="col-md-6">
-<!-- 
-                        <form action="{{ url('/register/type') }}" method="POST">
-                        {!! csrf_field() !!}
-                            <input type="hidden" value="guest" name="usertype">
-                            <input type="submit" class="btn btn-default" value="I'm looking for a place to stay"></a>
-                        </form> -->
+
 
                         {!! Form::open(['route' => ['user_path']]) !!}
                         {!! Form::hidden('usertype', 'guest') !!}

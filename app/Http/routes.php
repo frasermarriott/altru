@@ -31,6 +31,9 @@ Route::get('/profile/edit', 'HomeController@editprofile');
 // This is the page the user is directed to immediately after logging in
 Route::get('/dashboard', 'HomeController@dashboard');
 
+// Contact Form
+Route::get('contact', ['as' => 'contact', 'uses' => 'ContactController@create']);
+Route::post('contact', ['as' => 'contact_store', 'uses' => 'ContactController@store']);
 
 
 
