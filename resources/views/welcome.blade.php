@@ -12,7 +12,7 @@
                 <div class="panel-body">
 
 
-                    <h1>Welcome to Altru</h1>
+                    <h1>Welcome to <span class="notranslate">Altru</span></h1>
 
                     <iframe src="https://drive.google.com/file/d/0B3gdZmotwdbZWnZkOHdGd1o1OTg/preview" width="100%" height="480"></iframe>
 
@@ -24,7 +24,7 @@
 
                     <!-- Chek if user is logged in, if not, display create account button -->
                     @if(\Auth::check())
-                        <p>test</p>
+                        
                     @else
                         <h3>Get Started</h3>
                         <a href="{{ url('/register/usertype') }}" class="btn btn-primary">Create your Profile</a>

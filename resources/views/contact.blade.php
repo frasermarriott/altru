@@ -9,11 +9,24 @@
 
   <h1>Contact Us</h1>
 
-  <ul>
-      @foreach($errors->all() as $error)
-          <li>{{ $error }}</li>
-      @endforeach
-  </ul>
+  @if(count($errors))
+    <div class="alert alert-danger">
+
+        @foreach($errors->all() as $error)
+          
+          <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"> </span>
+          <span class="sr-only">Error:</span> {{ $error }} <br>
+
+        @endforeach
+    </div> 
+  @endif
+
+  <!-- Contact Confirmation Message -->
+  @if(Session::has('message'))
+    <div class="alert alert-info">
+      {{Session::get('message')}}
+    </div>
+  @endif
 
   {!! Form::open(array('route' => 'contact_store', 'class' => 'form')) !!}
 

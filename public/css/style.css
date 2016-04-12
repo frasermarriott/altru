@@ -1,3 +1,37 @@
 body {
 	overflow-y: scroll;
+	top: 0 !important;
+}
+
+
+/* Make the dropdowns 100% width */
+.lang-dropdown {
+	min-width: 118px;
+    width: 100%;
+}
+
+.user-dropdown {
+	min-width: 130px;
+    width: 100%;
+}
+
+
+/*###############################
+     Google Translate
+###############################*/
+
+/* Hide Translated by Google bar */
+.goog-te-banner-frame.skiptranslate {
+    display: none !important;
+    visibility: hidden !important;
+}
+
+/* Hide google translate element */
+#google_translate_element {
+	display:none;
+}
+
+/* Languages in dropdown menu */
+.lang-btn {
+	cursor: pointer;
 }
