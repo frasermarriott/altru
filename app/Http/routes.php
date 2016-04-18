@@ -28,6 +28,9 @@ Route::get('/profile', 'HomeController@profile');
 
 Route::get('/profile/edit', 'HomeController@editprofile');
 
+Route::post('/profile/edit/update', ['as' => 'updateprofile', 'uses' =>'HomeController@editprofileUpdate']);
+// Route::get('/profile/edit/update', ['as' => 'updateprofileVolunteer', 'uses' =>'HomeController@editprofileUpdate']);
+
 // This is the page the user is directed to immediately after logging in
 Route::get('/dashboard', 'HomeController@dashboard');
 
@@ -36,6 +39,7 @@ Route::get('contact', ['as' => 'contact', 'uses' => 'ContactController@create'])
 Route::post('contact', ['as' => 'contact_store', 'uses' => 'ContactController@store']);
 
 
+// Guests Profile
 
 
 

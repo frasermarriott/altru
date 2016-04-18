@@ -16,6 +16,44 @@ body {
 }
 
 
+
+
+/*###############################
+     Registration
+###############################*/
+
+.usertype-btn {
+	height: 70vh;
+}
+
+.usertype-icon {
+	font-size: 3em;
+}
+
+.usertype-txt {
+	white-space: normal;
+}
+
+
+/*###############################
+     User Profiles
+###############################*/
+
+
+#profile-about-txt {
+	/* float: left; */
+}
+
+#profile-image {
+	width: 300px;
+	height: 300px;
+	background-color: beige;
+	/* float: right; */
+}
+
+
+
+
 /*###############################
      Google Translate
 ###############################*/

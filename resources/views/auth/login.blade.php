@@ -61,6 +61,13 @@
                                 <a class="btn btn-link" href="{{ url('/password/reset') }}">Forgot Your Password?</a>
                             </div>
                         </div>
+
+                        <div class="form-group">
+                            <div class="col-md-6 col-md-offset-4">
+                                <a href="{{ url('/register/usertype') }}">Don't have an account yet? Sign up!</a>
+                            </div>
+                        </div>
+
                     </form>
                 </div>
             </div>
