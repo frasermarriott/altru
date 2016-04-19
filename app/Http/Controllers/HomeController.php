@@ -164,6 +164,12 @@ class HomeController extends Controller
         $profiletype = Auth::user()->usertype;
         $current_user = Auth::user()->id;
 
+        // If admin, return the admin dashboard view.
+        if($profiletype=='admin'){
+            // return view('admin.admin-dashboard');
+            return redirect()->route('admin-dashboard');
+        }
+
         // Check if user is guest or volunteer
         if($profiletype=='guest'){
             $user = DB::table('guests')->where('user_id', '=', Auth::user()->id)->first();
@@ -185,7 +191,9 @@ class HomeController extends Controller
         }
   
 
+        
         return view('dashboard');
+        
     }
 
 }

@@ -33,12 +33,20 @@ Route::post('/profile/edit/update', ['as' => 'updateprofile', 'uses' =>'HomeCont
 // This is the page the user is directed to immediately after logging in
 Route::get('/dashboard', 'HomeController@dashboard');
 
+
+// Admin
+Route::get('/admin-dashboard', ['as' => 'admin-dashboard', 'uses' => 'AdminController@dashboard']);
+
+Route::get('/edit-user/{id}', ['as' => 'edit-user', 'uses' => 'AdminController@edit_user']);
+
+Route::get('/update-user', ['as' => 'update-user', 'uses' => 'AdminController@update_user']);
+
+
 // Contact Form
 Route::get('contact', ['as' => 'contact', 'uses' => 'ContactController@create']);
 Route::post('contact', ['as' => 'contact_store', 'uses' => 'ContactController@store']);
 
 
-// Guests Profile
 
 
 
