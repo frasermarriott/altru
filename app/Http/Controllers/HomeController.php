@@ -101,11 +101,51 @@ class HomeController extends Controller
                 'file' => 'mimes:'.$allowed_file_types.'|max:'.$max_file_size,
             ];
             $this->validate($request, $rules);
-            $file_name = $file->getClientOriginalName(); // Request the file name.
+            $random_string = str_random(20); // Generate a random string to prepend to the filename, to prevent duplicate filenames.
+            $file_name = ($random_string.'-'.($file->getClientOriginalName())); // Request the file name.
             $destination_path = config('app.file_destination_path').'/'.$file_name; // Set the destination.
             $uploaded = Storage::put($destination_path, file_get_contents($file->getRealPath()));
 
+            // Insert filename into the database table for the logged in user.
             if($uploaded){
+
+                if($profiletype=='guest') {
+
+                    // Delete the user's previous profile picture
+                    $image_exists = DB::table('families')->where('user_id', $current_user)->value('profile_img');
+ 
+                    // Protect placeholder image from deletion.
+                    if($image_exists == 'profile-placeholder-300x300.png'){
+                        //
+                    }
+                    else{
+                        Storage::delete(config('app.file_destination_path').'/'.$image_exists);
+                    }
+
+                    // Update the database with the image filename
+                    DB::table('guests')->where('user_id', '=', $current_user)->update([
+                        'profile_img' => $file_name,
+                    ]);
+                }
+                elseif($profiletype=='volunteer') {
+
+
+                    // Delete the user's previous profile picture
+                    $image_exists = DB::table('families')->where('user_id', $current_user)->value('profile_img');
+ 
+                    // Protect placeholder image from deletion.
+                    if($image_exists == 'profile-placeholder-300x300.png'){
+                        //
+                    }
+                    else{
+                        Storage::delete(config('app.file_destination_path').'/'.$image_exists);
+                    }
+  
+                    // Update the database with the image filename
+                    DB::table('families')->where('user_id', '=', $current_user)->update([
+                        'profile_img' => $file_name,
+                    ]);
+                }
 
             }
         }
@@ -114,10 +154,6 @@ class HomeController extends Controller
 
     }
 
-    // public function handleUpload()
-    // {
-
-    // }
 
 
     // This is the page the user is directed to immediately after logging in

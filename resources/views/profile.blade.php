@@ -20,7 +20,7 @@
                         <div class="col-lg-5">
 
                             <div id="profile-image">
-                                <img src="img/uploads/profile-pics/{{$user->profile_img}}">
+                                <img class="profile-pic" src="img/uploads/profile-pics/{{$user->profile_img}}">
                             </div>
 
                         </div>
@@ -75,7 +75,7 @@
                         <div class="col-lg-5">
 
                             <div id="profile-image">
-                                <img src="img/uploads/profile-pics/{{$user->profile_img}}">
+                                <img class="profile-pic" src="img/uploads/profile-pics/{{$user->profile_img}}">
                             </div>
 
                         </div>

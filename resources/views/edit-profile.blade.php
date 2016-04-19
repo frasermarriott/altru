@@ -22,8 +22,8 @@
                         <!-- Profile Picture -->
                         <div class="col-lg-5">
 
-                            <div id="profile-image">Change image
-                            <img src="img/profile-pics/{{$user->profile_img}}">
+                            <div id="profile-image">
+                                <img class="profile-pic" src="../img/uploads/profile-pics/{{$user->profile_img}}">
                             </div>
 
                         </div>
@@ -105,8 +105,8 @@
                         <!-- Profile Picture -->
                         <div class="col-lg-5">
 
-                            <div id="profile-image">Change image
-                            <img src="img/profile-pics/{{$user->profile_img}}">
+                            <div id="profile-image">
+                                <img class="profile-pic" src="../img/uploads/profile-pics/{{$user->profile_img}}">
                             </div>
 
                         </div>
@@ -153,6 +153,7 @@
                                         {!! Form::file('file') !!}
                                         <small class="text-danger">{{ $errors->first('file') }}</small>
                                     </div>
+
 
                                     <div class="form-group"> 
                                         {!! Form::submit("Update", ['class' => 'btn btn-primary']) !!}
