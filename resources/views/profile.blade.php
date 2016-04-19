@@ -20,10 +20,12 @@
                         <div class="col-lg-5">
 
                             <div id="profile-image">
-                                <img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=Profile%20Image&w=300&h=300">
+                                <img src="img/uploads/profile-pics/{{$user->profile_img}}">
                             </div>
 
                         </div>
+
+                        
 
                         <!-- About section -->
                         <div class="col-lg-6">
@@ -73,7 +75,7 @@
                         <div class="col-lg-5">
 
                             <div id="profile-image">
-                                <img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=Profile%20Image&w=300&h=300">
+                                <img src="img/uploads/profile-pics/{{$user->profile_img}}">
                             </div>
 
                         </div>

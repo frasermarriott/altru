@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Auth;
 use DB;
 use Input;
+use \Storage;
 // use App\Quotation;
 
 class HomeController extends Controller
@@ -67,7 +68,7 @@ class HomeController extends Controller
 
 
 
-    public function editprofileUpdate()
+    public function editprofileUpdate(Request $request)
     {
         $profiletype = Auth::user()->usertype;
         $current_user = Auth::user()->id;
@@ -92,9 +93,25 @@ class HomeController extends Controller
             ]);
         }
 
+        if($request->hasFile('file')){
+            $file = $request->file('file'); // Request file from the upload form.
+            $file_name = $file->getClientOriginalName(); // Request the file name.
+            $destination_path = config('app.file_destination_path').'/'.$file_name; // Set the destination.
+            $uploaded = Storage::put($destination_path, file_get_contents($file->getRealPath()));
+
+            if($uploaded){
+
+            }
+        }
+
         return redirect('profile')->with('success', 'Profile updated!');
 
     }
+
+    // public function handleUpload()
+    // {
+
+    // }
 
 
     // This is the page the user is directed to immediately after logging in
@@ -108,23 +125,23 @@ class HomeController extends Controller
         // Check if user is guest or volunteer
         if($profiletype=='guest'){
             $user = DB::table('guests')->where('user_id', '=', Auth::user()->id)->first();
+            $profile_pic = DB::table('guests')->where('user_id', '=', Auth::user()->id)->whereNotNull('profile_img')->get();
         }
         elseif($profiletype=='volunteer'){
             $user = DB::table('families')->where('user_id', '=', Auth::user()->id)->first();
+            $profile_pic = DB::table('families')->where('user_id', '=', Auth::user()->id)->whereNotNull('profile_img')->get();
         }
 
         // If the logged-in user does not exist in either database, create a blank entry for them in the table consisting of only their user_id.
         if($user === null){
             if($profiletype=='guest') {
-                DB::table('guests')->insert(['user_id' => $current_user]);
+                DB::table('guests')->insert(['user_id' => $current_user, 'profile_img' => 'profile-placeholder-300x300.png']);
             }
             elseif($profiletype=='volunteer'){
-                DB::table('families')->insert(['user_id' => $current_user]);
+                DB::table('families')->insert(['user_id' => $current_user, 'profile_img' => 'profile-placeholder-300x300.png']);
             }
         }
-
-
-
+  
 
         return view('dashboard');
     }

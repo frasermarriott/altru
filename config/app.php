@@ -1,6 +1,8 @@
 <?php
 
 return [
+    // Profile image destination path (within public folder defined in filestsyems.php)
+    'file_destination_path' => 'img/uploads/profile-pics',
 
     /*
     |--------------------------------------------------------------------------

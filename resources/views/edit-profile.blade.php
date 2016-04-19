@@ -23,7 +23,7 @@
                         <div class="col-lg-5">
 
                             <div id="profile-image">Change image
-                            <img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=Profile%20Image&w=300&h=300">
+                            <img src="img/profile-pics/{{$user->profile_img}}">
                             </div>
 
                         </div>
@@ -34,7 +34,7 @@
                             <div id="profile-about-txt">
 
 
-                                {!! Form::open(['method' => 'POST', 'route' => 'updateprofile', 'class' => 'form-horizontal']) !!}
+                                {!! Form::open(['method' => 'POST', 'route' => 'updateprofile', 'class' => 'form-horizontal', 'files' => true]) !!}
                                 
                                     <div class="form-group{{ $errors->has('first_name') ? ' has-error' : '' }}">
                                         {!! Form::label('first_name', 'First name') !!}
@@ -72,6 +72,10 @@
                                         <small class="text-danger">{{ $errors->first('language') }}</small>
                                     </div>
 
+                                    <div class="form-group">
+                                        {!! Form::file('file') !!}
+                                    </div>
+
 
                                     <div class="form-group"> 
                                         {!! Form::submit("Update", ['class' => 'btn btn-primary']) !!}
@@ -101,7 +105,7 @@
                         <div class="col-lg-5">
 
                             <div id="profile-image">Change image
-                            <img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=Profile%20Image&w=300&h=300">
+                            <img src="img/profile-pics/{{$user->profile_img}}">
                             </div>
 
                         </div>
@@ -112,7 +116,7 @@
                             <div id="profile-about-txt">
 
 
-                                {!! Form::open(['method' => 'POST', 'route' => 'updateprofile', 'class' => 'form-horizontal']) !!}
+                                {!! Form::open(['method' => 'POST', 'route' => 'updateprofile', 'class' => 'form-horizontal', 'files' => true]) !!}
                                 
                                     <div class="form-group{{ $errors->has('family_name') ? ' has-error' : '' }}">
                                         {!! Form::label('family_name', 'Family name') !!}
@@ -142,6 +146,10 @@
                                         {!! Form::label('contact_phone', 'Contact phone') !!}
                                         {!! Form::number('contact_phone', $user->contact_phone, ['class' => 'form-control', 'placeholder' => 'Enter your phone number', 'required' => 'required']) !!}
                                         <small class="text-danger">{{ $errors->first('contact_phone') }}</small>
+                                    </div>
+
+                                    <div class="form-group">
+                                        {!! Form::file('file') !!}
                                     </div>
 
                                     <div class="form-group"> 
