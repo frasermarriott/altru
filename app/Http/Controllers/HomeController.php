@@ -95,6 +95,12 @@ class HomeController extends Controller
 
         if($request->hasFile('file')){
             $file = $request->file('file'); // Request file from the upload form.
+            $allowed_file_types = config('app.allowed_file_types');
+            $max_file_size = config('app.max_file_size');
+            $rules = [
+                'file' => 'mimes:'.$allowed_file_types.'|max:'.$max_file_size,
+            ];
+            $this->validate($request, $rules);
             $file_name = $file->getClientOriginalName(); // Request the file name.
             $destination_path = config('app.file_destination_path').'/'.$file_name; // Set the destination.
             $uploaded = Storage::put($destination_path, file_get_contents($file->getRealPath()));

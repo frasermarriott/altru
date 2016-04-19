@@ -3,6 +3,8 @@
 return [
     // Profile image destination path (within public folder defined in filestsyems.php)
     'file_destination_path' => 'img/uploads/profile-pics',
+    'allowed_file_types' => 'jpg,jpeg,png,gif,bmp',
+    'max_file_size' => 2000,
 
     /*
     |--------------------------------------------------------------------------

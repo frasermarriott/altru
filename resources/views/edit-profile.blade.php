@@ -72,8 +72,9 @@
                                         <small class="text-danger">{{ $errors->first('language') }}</small>
                                     </div>
 
-                                    <div class="form-group">
+                                    <div class="form-group{{ $errors->has('file') ? ' has-error' : '' }}">
                                         {!! Form::file('file') !!}
+                                        <small class="text-danger">{{ $errors->first('file') }}</small>
                                     </div>
 
 
@@ -148,8 +149,9 @@
                                         <small class="text-danger">{{ $errors->first('contact_phone') }}</small>
                                     </div>
 
-                                    <div class="form-group">
+                                    <div class="form-group{{ $errors->has('file') ? ' has-error' : '' }}">
                                         {!! Form::file('file') !!}
+                                        <small class="text-danger">{{ $errors->first('file') }}</small>
                                     </div>
 
                                     <div class="form-group"> 
