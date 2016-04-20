@@ -3,7 +3,7 @@
 	    $("#file").click();
 	});
 
-    $(":file").filestyle();
+    // $(":file").filestyle();
     
 })(jQuery);
 
