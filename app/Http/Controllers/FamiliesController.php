@@ -21,8 +21,8 @@ class FamiliesController extends Controller
     {
     	$family_id = DB::table('families')->value('user_id', '=', $id);
 
-    	$get_family = DB::table('families')->where('user_id', $family_id)->first();
+    	$family = DB::table('families')->where('user_id', $family_id)->first();
 
-    	return view('family', ['family' => $family_id, 'get_family' => $get_family]);
+    	return view('family', ['family' => $family_id, 'family' => $family]);
     }
 }

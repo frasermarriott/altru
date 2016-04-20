@@ -13,10 +13,10 @@
                 
       
           
-     <h1>test</h1>
+                    <h1>test</h1>
 
      
- <p>{{$get_family->family_name}}</p>
+                    <p>{{$family->family_name}}</p>
                         
 
                         

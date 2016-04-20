@@ -15,7 +15,7 @@
           
                     @foreach($volunteer_list as $volunteer)
                     <hr>
-                            <p>{{$volunteer->family_name}}</p>
+                            <p>{{$volunteer->family_name}} <a href="{{ route('view_family', array('id' => $volunteer->user_id)) }}">more info</a></p> 
                             
                             <!-- <a href="@{{ route('connect_family', array('id' => $volunteer->user_id)) }}" class="btn btn-primary btn-xs">Edit</a> -->
                             
