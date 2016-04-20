@@ -104,6 +104,24 @@ img.profile-pic {
 
 
 
+
+
+.search_location_label {
+    font-size: 1.4em;
+}
+
+.label-location {
+    min-width: 100px;
+    display: inline-block;
+}
+
+.link-to-profile {
+    /* float: right; */
+}
+
+
+
+
 /*###############################
      Google Translate
 ###############################*/

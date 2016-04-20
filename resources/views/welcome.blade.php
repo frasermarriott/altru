@@ -4,6 +4,15 @@
 
 @section('content')
 <div class="container">
+
+                                <!-- Display verification error -->
+                                @if(Session::has('verification_error'))
+                                    <div class="alert alert-warning fade in">
+                                        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                        <p>{{ Session::get('verification_error') }}</p>
+                                    </div>
+                                @endif
+
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
 

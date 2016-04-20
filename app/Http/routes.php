@@ -24,14 +24,15 @@ Route::post('register/new', ['as' => 'user_path', 'uses' => 'UsertypeController@
 
 Route::auth();
 
-Route::get('/profile', 'HomeController@profile');
+// Route::get('/profile', 'HomeController@profile');
+Route::get('/profile', ['as' => 'profile', 'uses' => 'HomeController@profile']);
 
-Route::get('/profile/edit', 'HomeController@editprofile');
+Route::get('/profile/edit', ['as' => 'editprofile', 'uses' => 'HomeController@editprofile']);
 
 Route::post('/profile/edit/update', ['as' => 'updateprofile', 'uses' =>'HomeController@editprofileUpdate']);
 
 // This is the page the user is directed to immediately after logging in
-Route::get('/dashboard', 'HomeController@dashboard');
+Route::get('/dashboard', ['as' => 'dashboard', 'uses' => 'HomeController@dashboard']);
 
 
 // Admin
@@ -50,18 +51,5 @@ Route::post('contact', ['as' => 'contact_store', 'uses' => 'ContactController@st
 // Families
 Route::get('/families', ['as' => 'view_families', 'uses' => 'FamiliesController@view_families']);
 
-Route::get('families/{id}', ['as' => 'view_family', 'uses' => 'FamiliesController@view_family']);
+Route::get('/families/{id}', ['as' => 'view_family', 'uses' => 'FamiliesController@view_family']);
 
-// Families database test
-
-// Route::get('families', function(){
-// 	$families = App\Families::all();
-// 	foreach ($families as $family) {
-// 		echo $family->family_name . "<br>";
-// 	}
-// });
-
-// Route::get('families/{id}', function($id){
-// 	$family = App\Families::find($id);
-// 	echo $family->family_name;
-// });

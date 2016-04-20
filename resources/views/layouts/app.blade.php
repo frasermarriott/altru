@@ -61,14 +61,17 @@
 
                         <!-- If user is an Admin - display this: -->
                         @if(\Auth::user()->usertype=='admin')
-                            <li><a href="{{ url('/dashboard') }}">Admin Dashboard</a></li>
+                            <li class="{{ Route::currentRouteNamed('admin-dashboard') ? 'active' : '' }}">
+                                <a href="{{ url('/dashboard') }}">Admin Dashboard</a></li>
                         @endif
 
                         <!-- If user is not an Admin - display this: -->
                         @if(\Auth::user()->usertype!=='admin')
-                            <li><a href="{{ url('/dashboard') }}">My Dashboard</a></li>
-                            <li><a href="{{ url('/profile') }}">My Profile</a></li>
-                            <li><a href="{{ url('/contact') }}">Contact</a></li>
+                            <li class="{{ Route::currentRouteNamed('dashboard') ? 'active' : '' }}"><a href="{{ url('/dashboard') }}">My Dashboard</a></li>
+                            <li @if((Route::currentRouteNamed('profile'))||(Route::currentRouteNamed('editprofile'))) class="active"@endif>
+                                <a href="{{ url('/profile') }}">My Profile</a></li>
+                            <li class="{{ Route::currentRouteNamed('contact') ? 'active' : '' }}">
+                                <a href="{{ url('/contact') }}">Contact</a></li>
                         @endif
 
                     @endif
@@ -77,11 +80,13 @@
                     
                     <!-- Show these links only if user is not logged in -->
                     @if (Auth::guest())
-                        <li><a href="{{ url('/dashboard') }}">My Dashboard</a></li>
+                        <li class="{{ Route::currentRouteNamed('dashboard') ? 'active' : '' }}">
+                            <a href="{{ url('/dashboard') }}">My Dashboard</a></li>
                         <li><a href="{{ url('/profile') }}">My Profile</a></li>
-                        <li><a href="{{ url('/contact') }}">Contact</a></li>
-                        <li><a href="{{ url('/login') }}">Login</a></li>
-                        <li><a href="{{ url('/register/usertype') }}">Register</a></li>
+                        <li class="{{ Route::currentRouteNamed('contact') ? 'active' : '' }}">
+                            <a href="{{ url('/contact') }}">Contact</a></li>
+                        <li class="{{ Request::path() == 'login' ? 'active' : '' }}"><a href="{{ url('/login') }}">Login</a></li>
+                        <li @if((Request::path() == 'register/usertype')||(Request::path() == 'register/new')) class="active"@endif><a href="{{ url('/register/usertype') }}">Register</a></li>
                     @else
                     <!-- If user is logged in, display toggle menu instead of log in button -->
                         <li class="dropdown">

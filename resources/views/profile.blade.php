@@ -42,7 +42,7 @@
 
                                 <!-- Check if user already exists in the 'guests' table -->
                                 @if($profile_details_exist)   
-                                    <h2>You haven't added any information to your profile yet</h2>
+                                    <h2>Complete your profile to get started.</h2>
                                     <a href="{{ url('profile/edit') }}" class="btn btn-primary">Edit Profile</a>   
                                 @else
                                     <h1 class="notranslate">{{ $user->first_name.' '.$user->last_name }}</h1>
@@ -95,7 +95,7 @@
 
                                 <!-- Check if user already exists in the 'volunteers' table -->
                                 @if($profile_details_exist)   
-                                    <h2>You haven't added any information to your profile yet</h2>
+                                    <h2>Complete your profile to get started.</h2>
                                     <a href="{{ url('profile/edit') }}" class="btn btn-primary">Edit Profile</a>   
                                 @else
                                     <h1 class="notranslate">{{ $user->family_name }}</h1>
