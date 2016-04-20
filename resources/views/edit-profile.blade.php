@@ -22,8 +22,10 @@
                         <!-- Profile Picture -->
                         <div class="col-lg-5">
 
-                            <div id="profile-image">
-                                <img class="profile-pic" src="../img/uploads/profile-pics/{{$user->profile_img}}">
+                            <div data-content="Change profile picture" class="image-overlay">
+                                <div id="profile-image">
+                                    <img class="profile-pic" src="../img/uploads/profile-pics/{{$user->profile_img}}">
+                                </div>
                             </div>
 
                         </div>
@@ -73,7 +75,7 @@
                                     </div>
 
                                     <div class="form-group{{ $errors->has('file') ? ' has-error' : '' }}">
-                                        {!! Form::file('file') !!}
+                                        {!! Form::file('file', ['id' => 'file']) !!}
                                         <small class="text-danger">{{ $errors->first('file') }}</small>
                                     </div>
 
@@ -105,8 +107,10 @@
                         <!-- Profile Picture -->
                         <div class="col-lg-5">
 
-                            <div id="profile-image">
-                                <img class="profile-pic" src="../img/uploads/profile-pics/{{$user->profile_img}}">
+                            <div data-content="Change profile picture" class="image-overlay">
+                                <div id="profile-image">
+                                    <img class="profile-pic" src="../img/uploads/profile-pics/{{$user->profile_img}}">
+                                </div>
                             </div>
 
                         </div>
@@ -150,7 +154,7 @@
                                     </div>
 
                                     <div class="form-group{{ $errors->has('file') ? ' has-error' : '' }}">
-                                        {!! Form::file('file') !!}
+                                        {!! Form::file('file', ['id' => 'file']) !!}
                                         <small class="text-danger">{{ $errors->first('file') }}</small>
                                     </div>
 

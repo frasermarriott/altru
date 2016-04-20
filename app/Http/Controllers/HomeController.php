@@ -93,6 +93,7 @@ class HomeController extends Controller
             ]);
         }
 
+        // Handle image upload
         if($request->hasFile('file')){
             $file = $request->file('file'); // Request file from the upload form.
             $allowed_file_types = config('app.allowed_file_types');
@@ -114,11 +115,8 @@ class HomeController extends Controller
                     // Delete the user's previous profile picture
                     $image_exists = DB::table('families')->where('user_id', $current_user)->value('profile_img');
  
-                    // Protect placeholder image from deletion.
-                    if($image_exists == 'profile-placeholder-300x300.png'){
-                        //
-                    }
-                    else{
+                    // Protect placeholder image from deletion when a new account changes their profile picture.
+                    if($image_exists !== 'profile-placeholder-300x300.png'){
                         Storage::delete(config('app.file_destination_path').'/'.$image_exists);
                     }
 
@@ -133,11 +131,8 @@ class HomeController extends Controller
                     // Delete the user's previous profile picture
                     $image_exists = DB::table('families')->where('user_id', $current_user)->value('profile_img');
  
-                    // Protect placeholder image from deletion.
-                    if($image_exists == 'profile-placeholder-300x300.png'){
-                        //
-                    }
-                    else{
+                    // Protect placeholder image from deletion when a new account changes their profile picture.
+                    if($image_exists !== 'profile-placeholder-300x300.png'){
                         Storage::delete(config('app.file_destination_path').'/'.$image_exists);
                     }
   
