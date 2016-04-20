@@ -19,7 +19,8 @@
 
 
                                 {!! Form::open(['method' => 'POST', 'route' => 'update-user', 'class' => 'form-horizontal']) !!}
-                                
+                                     {!! Form::hidden('id', $user_to_edit->id, ['required' => 'required']) !!}
+                                     
                                     <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
                                         {!! Form::label('name', 'Username') !!}
                                         {!! Form::text('name', $user_to_edit->name, ['class' => 'form-control', 'placeholder' => 'Username', 'required' => 'required']) !!}

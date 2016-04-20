@@ -39,7 +39,7 @@ Route::get('/admin-dashboard', ['as' => 'admin-dashboard', 'uses' => 'AdminContr
 
 Route::get('/edit-user/{id}', ['as' => 'edit-user', 'uses' => 'AdminController@edit_user']);
 
-Route::get('/update-user', ['as' => 'update-user', 'uses' => 'AdminController@update_user']);
+Route::post('/update-user', ['as' => 'update-user', 'uses' => 'AdminController@update_user']);
 
 
 // Contact Form

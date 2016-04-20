@@ -90,7 +90,10 @@
                             </a>
 
                             <ul class="dropdown-menu user-dropdown" role="menu">
-                                <li><a href="{{ url('/profile/edit') }}"><i class="fa fa-btn fa-user"></i>Edit Profile</a></li>
+                                <!-- Don't display 'Edit Profile' if logged in as an Admin -->
+                                @if(\Auth::user()->usertype!=='admin')
+                                    <li><a href="{{ url('/profile/edit') }}"><i class="fa fa-btn fa-user"></i>Edit Profile</a></li>
+                                @endif
                                 <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
                             </ul>
                         </li>
