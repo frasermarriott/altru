@@ -54,11 +54,32 @@
 
                 <!-- Right Side Of Navbar -->
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="{{ url('/dashboard') }}">My Dashboard</a></li>
-                    <li><a href="{{ url('/profile') }}">My Profile</a></li>
-                    <li><a href="{{ url('/contact') }}">Contact</a></li>
+
+
+                    <!-- Check if a user is logged in -->
+                    @if(Auth::check())
+
+                        <!-- If user is an Admin - display this: -->
+                        @if(\Auth::user()->usertype=='admin')
+                            <li><a href="{{ url('/dashboard') }}">Admin Dashboard</a></li>
+                        @endif
+
+                        <!-- If user is not an Admin - display this: -->
+                        @if(\Auth::user()->usertype!=='admin')
+                            <li><a href="{{ url('/dashboard') }}">My Dashboard</a></li>
+                            <li><a href="{{ url('/profile') }}">My Profile</a></li>
+                            <li><a href="{{ url('/contact') }}">Contact</a></li>
+                        @endif
+
+                    @endif
+
+
+                    
                     <!-- Show these links only if user is not logged in -->
                     @if (Auth::guest())
+                        <li><a href="{{ url('/dashboard') }}">My Dashboard</a></li>
+                        <li><a href="{{ url('/profile') }}">My Profile</a></li>
+                        <li><a href="{{ url('/contact') }}">Contact</a></li>
                         <li><a href="{{ url('/login') }}">Login</a></li>
                         <li><a href="{{ url('/register/usertype') }}">Register</a></li>
                     @else
@@ -96,7 +117,7 @@
 
 
 
-<!-- Google Translate functionality -->
+<!-- Google Translate -->
 
 <div id="google_translate_element"></div>
 <script type="text/javascript">
@@ -143,7 +164,7 @@ function triggerHtmlEvent(element, eventName)
 
 </script>
 
-<!-- Google translate functionality -->
+<!-- Google translate -->
 
 
 
