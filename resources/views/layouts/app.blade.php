@@ -179,6 +179,7 @@ function triggerHtmlEvent(element, eventName)
     <!-- JavaScripts -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <script src="/js/scripts.js"></script>
+    <script type="text/javascript" src="/js/bootstrap-filestyle.min.js"></script>
 
 </body>
 </html>

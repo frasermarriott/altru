@@ -20,7 +20,7 @@
 
                                 {!! Form::open(['method' => 'POST', 'route' => 'update-user', 'class' => 'form-horizontal']) !!}
                                      {!! Form::hidden('id', $user_to_edit->id, ['required' => 'required']) !!}
-                                     
+
                                     <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
                                         {!! Form::label('name', 'Username') !!}
                                         {!! Form::text('name', $user_to_edit->name, ['class' => 'form-control', 'placeholder' => 'Username', 'required' => 'required']) !!}
@@ -35,13 +35,15 @@
 
                                     <div class="form-group{{ $errors->has('usertype') ? ' has-error' : '' }}">
                                         {!! Form::label('usertype', 'Usertype') !!}
-                                        {!! Form::text('usertype', $user_to_edit->usertype, ['class' => 'form-control', 'placeholder' => 'guest/volunteer', 'required' => 'required']) !!}
+                                        {!! Form::select('usertype', array('guest' => 'Guest', 'volunteer' => 'Volunteer'), $user_to_edit->usertype,['class' => 'form-control', 'required' => 'required']); !!}
                                         <small class="text-danger">{{ $errors->first('usertype') }}</small>
                                     </div>
 
                                     <div class="form-group{{ $errors->has('verified') ? ' has-error' : '' }}">
-                                        {!! Form::label('verified', 'Verification status') !!}
-                                        {!! Form::text('verified', $user_to_edit->verified, ['class' => 'form-control', 'placeholder' => 'yes/no', 'required' => 'required']) !!}
+                                        {!! Form::label('verified', 'Verification status') !!} 
+                                        {!! Form::select('verified', array('no' => 'Not verified', 'yes' => 'Verified'), $user_to_edit->verified,['class' => 'form-control', 'required' => 'required']); !!}
+
+
                                         <small class="text-danger">{{ $errors->first('verified') }}</small>
                                     </div>
 

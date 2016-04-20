@@ -74,20 +74,49 @@ class HomeController extends Controller
         $current_user = Auth::user()->id;
 
         if($profiletype=='guest') {
+
+            // Validation rules
+            $rules = [
+                    'first_name'      => 'required|max:30',
+                    'last_name'       => 'required|max:30',
+                    'about_me'        => 'required|max:500',
+                    'additional_info' => 'required|max:500', 
+                    'location'        => 'required|max:50',
+                    'language'        => 'required|max:50'
+            ];
+
+            // Validate
+            $this->validate($request, $rules);
+
+            // Update database
             DB::table('guests')->where('user_id', '=', $current_user)->update([
-                'first_name' => Input::get('first_name'),
-                'last_name' => Input::get('last_name'),
-                'about_me' => Input::get('about_me'),
+                'first_name'      => Input::get('first_name'),
+                'last_name'       => Input::get('last_name'),
+                'about_me'        => Input::get('about_me'),
                 'additional_info' => Input::get('additional_info'),
-                'location' => Input::get('location'),
-                'language' => Input::get('language'),
+                'location'        => Input::get('location'),
+                'language'        => Input::get('language'),
              ]);
         }
         elseif($profiletype=='volunteer') {
+
+            // Validation rules
+            $rules = [
+                    'family_name'   => 'required',
+                    'about_family'  => 'required|max:600',
+                    'location'      => 'required|alpha',
+                    'contact_email' => 'required|email|unique:families,contact_email,'.$current_user.',user_id', 
+                    'contact_phone' => 'required|numeric',
+            ];
+
+            // Validate
+            $this->validate($request, $rules);
+
+            // Update database
             DB::table('families')->where('user_id', '=', $current_user)->update([
-                'family_name' => Input::get('family_name'),
-                'about_family' => Input::get('about_family'),
-                'location' => Input::get('location'),
+                'family_name'   => Input::get('family_name'),
+                'about_family'  => Input::get('about_family'),
+                'location'      => Input::get('location'),
                 'contact_email' => Input::get('contact_email'),
                 'contact_phone' => Input::get('contact_phone'),
             ]);
@@ -98,10 +127,13 @@ class HomeController extends Controller
             $file = $request->file('file'); // Request file from the upload form.
             $allowed_file_types = config('app.allowed_file_types');
             $max_file_size = config('app.max_file_size');
+
+            // Validation
             $rules = [
                 'file' => 'mimes:'.$allowed_file_types.'|max:'.$max_file_size,
             ];
             $this->validate($request, $rules);
+
             $random_string = str_random(20); // Generate a random string to prepend to the filename, to prevent duplicate filenames.
             $file_name = ($random_string.'-'.($file->getClientOriginalName())); // Request the file name.
             $destination_path = config('app.file_destination_path').'/'.$file_name; // Set the destination.

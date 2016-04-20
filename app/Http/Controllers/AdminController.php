@@ -12,6 +12,17 @@ class AdminController extends Controller
 {
     public function dashboard ()
     {
+    	// Restrict access to admin features
+    	if(Auth::check()==null){
+    		return redirect('/');
+	    }
+	    elseif(Auth::check()){
+	    	if(Auth::user()->usertype!=='admin'){
+	    		return redirect('/');
+	    	}
+	    }
+
+
     	$user_list = DB::table('users')->paginate(10);
 
     	return view('admin.admin-dashboard', ['user_list' => $user_list]);
@@ -20,6 +31,17 @@ class AdminController extends Controller
 
     public function edit_user(Request $id)
     {
+    	// Restrict access to admin features
+    	if(Auth::check()==null){
+    		return redirect('/');
+	    }
+	    elseif(Auth::check()){
+	    	if(Auth::user()->usertype!=='admin'){
+	    		return redirect('/');
+	    	}
+	    }
+
+
     	$get_user_id = $id->id;
     	$user_to_edit = DB::table('users')->where('id', '=', $get_user_id)->first();
     	return view('admin.edit-user', ['user_to_edit' => $user_to_edit, 'get_user_id' => $get_user_id]);
@@ -28,6 +50,16 @@ class AdminController extends Controller
 
     public function update_user(Request $id)
     {
+    	// Restrict access to admin features
+    	if(Auth::check()==null){
+    		return redirect('/');
+	    }
+	    elseif(Auth::check()){
+	    	if(Auth::user()->usertype!=='admin'){
+	    		return redirect('/');
+	    	}
+	    }
+
 
     	$get_user_id = $id->id;
 

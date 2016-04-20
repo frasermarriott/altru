@@ -52,13 +52,13 @@
 
                                     <div class="form-group{{ $errors->has('about_me') ? ' has-error' : '' }}">
                                         {!! Form::label('about_me', 'About me') !!}
-                                        {!! Form::text('about_me', $user->about_me, ['class' => 'form-control', 'placeholder' => 'Enter some information about yourself', 'required' => 'required']) !!}
+                                        {!! Form::textarea('about_me', $user->about_me, ['size' => '30x5', 'class' => 'form-control', 'placeholder' => 'Enter some information about yourself', 'required' => 'required']) !!}
                                         <small class="text-danger">{{ $errors->first('about_me') }}</small>
                                     </div>
 
                                     <div class="form-group{{ $errors->has('additional_info') ? ' has-error' : '' }}">
                                         {!! Form::label('additional_info', 'Additional information') !!}
-                                        {!! Form::text('additional_info', $user->additional_info, ['class' => 'form-control', 'placeholder' => 'Any other details you feel may be important', 'required' => 'required']) !!}
+                                        {!! Form::textarea('additional_info', $user->additional_info, ['size' => '30x3', 'class' => 'form-control', 'placeholder' => 'Any other details you feel may be important', 'required' => 'required']) !!}
                                         <small class="text-danger">{{ $errors->first('additional_info') }}</small>
                                     </div>
 
@@ -75,7 +75,7 @@
                                     </div>
 
                                     <div class="form-group{{ $errors->has('file') ? ' has-error' : '' }}">
-                                        {!! Form::file('file', ['id' => 'file']) !!}
+                                        {!! Form::file('file', ['id' => 'file', 'class' => 'filestyle', 'data-buttonBefore' => 'true', 'data-iconName' => 'glyphicon glyphicon-picture', 'data-buttonName' => 'btn-warning', 'data-size' => 'sm', 'data-buttonText' => 'Upload photo']) !!}
                                         <small class="text-danger">{{ $errors->first('file') }}</small>
                                     </div>
 
@@ -122,6 +122,8 @@
 
 
                                 {!! Form::open(['method' => 'POST', 'route' => 'updateprofile', 'class' => 'form-horizontal', 'files' => true]) !!}
+
+                                    {!! Form::hidden('user_id', $user->user_id, ['required' => 'required']) !!}
                                 
                                     <div class="form-group{{ $errors->has('family_name') ? ' has-error' : '' }}">
                                         {!! Form::label('family_name', 'Family name') !!}
@@ -131,7 +133,7 @@
 
                                     <div class="form-group{{ $errors->has('about_family') ? ' has-error' : '' }}">
                                         {!! Form::label('about_family', 'About our family') !!}
-                                        {!! Form::text('about_family', $user->about_family, ['class' => 'form-control', 'placeholder' => 'Enter some information about what you can help to provide', 'required' => 'required']) !!}
+                                        {!! Form::textarea('about_family', $user->about_family, ['size' => '30x5', 'class' => 'form-control', 'placeholder' => 'Enter some information about what you can help to provide', 'required' => 'required']) !!}
                                         <small class="text-danger">{{ $errors->first('about_family') }}</small>
                                     </div>
 
@@ -143,18 +145,18 @@
 
                                     <div class="form-group{{ $errors->has('contact_email') ? ' has-error' : '' }}">
                                         {!! Form::label('contact_email', 'Contact email') !!}
-                                        {!! Form::text('contact_email', $user->contact_email, ['class' => 'form-control', 'placeholder' => 'Enter your email address', 'required' => 'required']) !!}
+                                        {!! Form::email('contact_email', $user->contact_email, ['class' => 'form-control', 'placeholder' => 'Enter your email address', 'required' => 'required']) !!}
                                         <small class="text-danger">{{ $errors->first('contact_email') }}</small>
                                     </div>
 
                                     <div class="form-group{{ $errors->has('contact_phone') ? ' has-error' : '' }}">
                                         {!! Form::label('contact_phone', 'Contact phone') !!}
-                                        {!! Form::number('contact_phone', $user->contact_phone, ['class' => 'form-control', 'placeholder' => 'Enter your phone number', 'required' => 'required']) !!}
+                                        {!! Form::text('contact_phone', $user->contact_phone, ['class' => 'form-control', 'placeholder' => 'Enter your phone number', 'required' => 'required']) !!}
                                         <small class="text-danger">{{ $errors->first('contact_phone') }}</small>
                                     </div>
 
                                     <div class="form-group{{ $errors->has('file') ? ' has-error' : '' }}">
-                                        {!! Form::file('file', ['id' => 'file']) !!}
+                                        {!! Form::file('file', ['id' => 'file', 'class' => 'filestyle', 'data-buttonBefore' => 'true', 'data-iconName' => 'glyphicon glyphicon-picture', 'data-buttonName' => 'btn-warning', 'data-size' => 'sm', 'data-buttonText' => 'Upload photo']) !!}
                                         <small class="text-danger">{{ $errors->first('file') }}</small>
                                     </div>
 

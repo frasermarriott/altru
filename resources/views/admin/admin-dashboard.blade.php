@@ -3,6 +3,8 @@
 @section('title', 'Admin Dashboard')
 
 @section('content')
+
+
 <div class="container">
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
@@ -22,7 +24,7 @@
                                 <th>Email</th>
                                 <th>Usertype</th>
                                 <th>Verified</th>
-                                <th>Edit</th>
+                                <th></th>
                               </tr>
                             </thead>
                             <tbody>
@@ -31,7 +33,7 @@
                                 @foreach($user_list as $user)
                                     <tr>
                                         <td>{{$user->id}}</td>
-                                        <td>{{$user->name}}</td>
+                                        <td class="notranslate">{{$user->name}}</td>
                                         <td>{{$user->email}}</td>
                                         <td>{{ucwords($user->usertype)}}</td>
                                         @if($user->verified=='yes')
