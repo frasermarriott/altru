@@ -47,19 +47,21 @@ Route::get('contact', ['as' => 'contact', 'uses' => 'ContactController@create'])
 Route::post('contact', ['as' => 'contact_store', 'uses' => 'ContactController@store']);
 
 
+// Families
+Route::get('/families', ['as' => 'view_families', 'uses' => 'FamiliesController@view_families']);
 
-
+Route::get('families/{id}', ['as' => 'view_family', 'uses' => 'FamiliesController@view_family']);
 
 // Families database test
 
-Route::get('families', function(){
-	$families = App\Families::all();
-	foreach ($families as $family) {
-		echo $family->family_name . "<br>";
-	}
-});
+// Route::get('families', function(){
+// 	$families = App\Families::all();
+// 	foreach ($families as $family) {
+// 		echo $family->family_name . "<br>";
+// 	}
+// });
 
-Route::get('families/{id}', function($id){
-	$family = App\Families::find($id);
-	echo $family->family_name;
-});
+// Route::get('families/{id}', function($id){
+// 	$family = App\Families::find($id);
+// 	echo $family->family_name;
+// });
