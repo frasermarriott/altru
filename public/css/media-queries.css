@@ -27,7 +27,7 @@
         text-align: left;
     }
     .mainSquareContainer {
-        margin-top: 40px;
+        margin-top: -20px;
         display: flex;
         height: 100vh-100px;
         width: 100vw;
@@ -82,12 +82,6 @@
 
 }
 
-@media only screen and (min-width: 320px) and (max-width: 800px) {
-    .navLogo {
-        margin-left: 30px;
-
-    }
-}
 
 @media only screen and (min-width: 320px) and (max-width: 993px) {
     .profile-creation-area {
@@ -108,3 +102,5 @@
 nav .container {
     width: 100% !important;
 }
+
+
