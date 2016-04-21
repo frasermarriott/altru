@@ -12,7 +12,6 @@
                 <div class="panel-body">
 
                 
-                {{--dd($volunteer_list)--}}
 
                     <!-- placeholder form. Change to laravel format later -->
                     <form method="">
@@ -31,6 +30,15 @@
 
                     </form>
                     <!-- /plcaeholder form -->
+
+                    {{ Form::open(['action' => ['SearchController@searchUser'], 'method' => 'GET']) }}
+                        {{ Form::text('q', '', ['id' =>  'q', 'placeholder' =>  'Search'])}}
+                        {{ Form::submit('Search', array('class' => 'button expand')) }}
+                    {{ Form::close() }}
+
+
+
+
 
                 {{--$current_user_location--}}
 
