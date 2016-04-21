@@ -54,5 +54,7 @@ Route::get('/families', ['as' => 'view_families', 'uses' => 'FamiliesController@
 Route::get('/families/{id}', ['as' => 'view_family', 'uses' => 'FamiliesController@view_family']);
 
 
+// Guests
+Route::get('/guests', ['as' => 'view_guests', 'uses' => 'GuestsController@view_guests']);
 
-
+Route::get('/guests/{id}', ['as' => 'view_guest', 'uses' => 'GuestsController@view_guest']);
