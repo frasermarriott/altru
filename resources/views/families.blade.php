@@ -18,9 +18,8 @@
 
                         <div class="input-group has-feedback">
 
-                            <input type="text" class="form-control hasclear" name="search" id="search" aria-label="search by location" placeholder="Search by location" required>
+                            <input type="text" class="form-control hasclear" name="search" id="search" aria-label="search by location" value="{{$search_term}}" placeholder="Search by location" required>
 
-                            <!-- <span class="clearer glyphicon glyphicon-remove form-control-feedback"></span> -->
 
                             <span class="input-group-btn">
                                 <input type="submit" class="btn btn-default search-btn" value="Search"></input>
@@ -31,11 +30,13 @@
                     </form>
                     <!-- /plcaeholder form -->
 
-                    {{ Form::open(['action' => ['SearchController@searchUser'], 'method' => 'GET']) }}
-                        {{ Form::text('q', '', ['id' =>  'q', 'placeholder' =>  'Search'])}}
-                        {{ Form::submit('Search', array('class' => 'button expand')) }}
-                    {{ Form::close() }}
 
+                    <!-- Display search term -->
+                    @if($search_term)
+                        <br>
+                        <p><small>Showing results for <strong>"{{ ucwords($search_term) }}"</strong></small></p>
+                        <small><a href="{{ url('families') }}">Show all</a> </small>
+                    @endif
 
 
 
@@ -79,4 +80,9 @@
         </div>
     </div>
 </div>
+
+
+
+
 @endsection
+

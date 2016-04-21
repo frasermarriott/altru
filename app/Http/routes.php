@@ -53,3 +53,6 @@ Route::get('/families', ['as' => 'view_families', 'uses' => 'FamiliesController@
 
 Route::get('/families/{id}', ['as' => 'view_family', 'uses' => 'FamiliesController@view_family']);
 
+
+
+

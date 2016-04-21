@@ -24,7 +24,7 @@
 
                             <div data-content="Change profile picture" class="image-overlay">
                                 <div id="profile-image">
-                                    <img class="profile-pic" src="../img/uploads/profile-pics/{{$user->profile_img}}">
+                                    <img class="profile-pic" src="../img/uploads/profile-pics/{{$user->profile_img}}" alt="Edit my profile picture">
                                 </div>
                             </div>
 
@@ -109,7 +109,7 @@
 
                             <div data-content="Change profile picture" class="image-overlay">
                                 <div id="profile-image">
-                                    <img class="profile-pic" src="../img/uploads/profile-pics/{{$user->profile_img}}">
+                                    <img class="profile-pic" src="../img/uploads/profile-pics/{{$user->profile_img}}" alt="Edit my profile picture">
                                 </div>
                             </div>
 

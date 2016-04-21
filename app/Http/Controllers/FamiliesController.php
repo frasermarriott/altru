@@ -10,7 +10,7 @@ use Input;
 
 class FamiliesController extends Controller
 {
-    public function view_families()
+    public function view_families(Request $request)
     {
         // Restrict access to users who are not verified.
         if(Auth::check()==null){
@@ -21,19 +21,25 @@ class FamiliesController extends Controller
                 return redirect('/')->with('verification_error', 'Sorry, you can not yet access this page as your account has not been verified by our team');
             }
         }
-        
-        // List all families that have a completed profile
 
-        // $verified_volunteer = DB::table('users')->where('usertype', '=', 'volunteer')->where('verified', '=', 'yes')->value('id');
-        // $verified_volunteer = DB::select("SELECT id FROM users WHERE usertype = 'volunteer' AND verified = 'yes'");
+        // Get search term 
+        $search_term = $request->search;
 
+        // If a search term exists, query the database for the search term.
+        if($search_term) {
+            $volunteer_list = DB::table('families')->where('location', 'LIKE', '%'.$search_term.'%')->whereExists(function ($query) {
+                $query->select(DB::raw('id'))
+                      ->from('users')
+                      ->whereRaw('users.id = families.user_id')->where('verified', '=', 'yes'); })->paginate(10);
+        }
+        else{
 
         // List all families that have a completed profile and a verified account.
     	$volunteer_list = DB::table('families')->where('location', '!=', '')->whereExists(function ($query) {
                 $query->select(DB::raw('id'))
                       ->from('users')
                       ->whereRaw('users.id = families.user_id')->where('verified', '=', 'yes'); })->paginate(10);
-                        //->whereRaw('users.id = families.user_id')->where('verified', '=', 'yes'); })->get();
+        }
 
         // Check if user is logged in, if so, get their location.
         if(Auth::check()){
@@ -43,7 +49,7 @@ class FamiliesController extends Controller
             $current_user_location = "notset";
         }
 
-    	return view('families', ['volunteer_list' => $volunteer_list, 'current_user_location' => $current_user_location]);
+    	return view('families', ['volunteer_list' => $volunteer_list, 'current_user_location' => $current_user_location, 'search_term' => $search_term]);
     }
 
     public function view_family(Request $id)
