@@ -12,7 +12,7 @@
                 <div class="panel-body">
 
                 
-                
+                {{--dd($volunteer_list)--}}
 
                     <!-- placeholder form. Change to laravel format later -->
                     <form method="">

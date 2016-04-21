@@ -12,6 +12,14 @@
                 <div class="panel-heading notranslate">Admin Dashboard</div>
 
                 <div class="panel-body">
+
+                    <!-- User update message -->
+                    @if(Session::has('user_updated_msg'))
+                        <div class="alert alert-success fade in">
+                            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                            <p>{{ Session::get('user_updated_msg') }}</p>
+                        </div>
+                    @endif
                 
                     
                     <div class="table-responsive">

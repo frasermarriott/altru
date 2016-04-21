@@ -82,7 +82,7 @@ class AdminController extends Controller
     		'verified' => Input::get('verified'),
     	]);
 
-    	return redirect('admin-dashboard');
+    	return redirect('admin-dashboard')->with('user_updated_msg', 'Record updated successfully');
     }
 
 }

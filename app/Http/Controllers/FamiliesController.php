@@ -22,8 +22,18 @@ class FamiliesController extends Controller
             }
         }
         
+        // List all families that have a completed profile
 
-    	$volunteer_list = DB::table('families')->paginate(10);
+        // $verified_volunteer = DB::table('users')->where('usertype', '=', 'volunteer')->where('verified', '=', 'yes')->value('id');
+        // $verified_volunteer = DB::select("SELECT id FROM users WHERE usertype = 'volunteer' AND verified = 'yes'");
+
+
+        // List all families that have a completed profile and a verified account.
+    	$volunteer_list = DB::table('families')->where('location', '!=', '')->whereExists(function ($query) {
+                $query->select(DB::raw('id'))
+                      ->from('users')
+                      ->whereRaw('users.id = families.user_id')->where('verified', '=', 'yes'); })->paginate(10);
+                        //->whereRaw('users.id = families.user_id')->where('verified', '=', 'yes'); })->get();
 
         // Check if user is logged in, if so, get their location.
         if(Auth::check()){
