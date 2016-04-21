@@ -15,7 +15,7 @@
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="/css/normalize.css">
     <link rel="stylesheet" href="/css/panelHover.css">
-    <link rel="stylesheet" href="css/hover-min.css" media="all">
+    <link rel="stylesheet" href="/css/hover-min.css" media="all">
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/MyFontsWebfontsKit.css">
     <link rel="stylesheet" href="/css/media-queries.css">

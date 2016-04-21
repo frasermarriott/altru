@@ -29,15 +29,20 @@
                             <div id="profile-about-txt">
 
                                     <h1 class="notranslate">{{ ucwords($guest->first_name) }} {{ ucwords($guest->last_name) }}</h1> <hr>
-                                    <h4>What we can do to help:</h4>
+                                    <h4>About me</h4>
                                     <p>{{ $guest->about_me }}</p> <hr>
+
+                                    <h4>Additional information</h4>
+                                    <p>{{ $guest->additional_info }}</p> <hr>
 
                                     <h4>Location</h4>
                                     <p class="notranslate"><strong>{{ ucwords($guest->location) }}</strong></p> <hr>
 
-                                    <h4>Contact</h4>
-                                    <p><strong>Email:</strong> {{-- $guest->contact_email --}}</p>
-                                    <p><strong>Phone:</strong> {{-- $guest->contact_phone --}}</p>
+                                    
+
+                                <!--     <h4>Contact</h4>
+                                    <p><strong>Email:</strong> </p>
+                                    <p><strong>Phone:</strong> </p> -->
                          
 
                             </div>

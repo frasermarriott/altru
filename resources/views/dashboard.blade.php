@@ -4,9 +4,6 @@
 
 @section('content')
 
-<div class="dashboard-container">
-    <div class="row">
-        <div class="col-md-10 col-md-offset-1">
 
 
 
@@ -72,7 +69,5 @@
                         <img src="img/mockup-grid.png" style="width: 600px; margin: 0 auto; display: block;">
                 </div>
             </div> -->
-        </div>
-    </div>
-</div>
+
 @endsection

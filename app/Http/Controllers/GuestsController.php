@@ -43,7 +43,7 @@ class GuestsController extends Controller
 
         // Check if user is logged in, if so, get their location.
         if(Auth::check()){
-            $current_user_location = DB::table('guests')->where('user_id', '=', Auth::user()->id)->value('location');
+            $current_user_location = DB::table('families')->where('user_id', '=', Auth::user()->id)->value('location');
         }
         else {
             $current_user_location = "notset";

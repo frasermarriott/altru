@@ -40,6 +40,9 @@ body {
      User Profiles
 ###############################*/
 
+.custom-panel {
+    margin-top: 19px;
+}
 
 #profile-about-txt {
 	/* float: left; */
@@ -50,23 +53,40 @@ body {
 	height: 300px;
 	background-color: beige;
 	/* float: right; */
+    border-radius: 50%;
 }
 
 img.profile-pic {
 	width: 100%;
-    /* border-radius: 50%; */
+    border-radius: 50%;
+    box-shadow: 0 0 1px #333;
 }
 
 
 /* Profile picture edit overlay */
 
-.image-overlay {
-    position:relative;
-    width:300px;
-    height:300px;
+/* .image-overlay {
+    position:absolute;
+    width:200px;
+    height:200px;
     cursor: pointer;
+} */
+
+.image-overlay{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    cursor: pointer;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
 }
-.image-overlay #profile-image img.profile-pic {
+
+.image-overlay .profile-img img.profile-pic {
     width:100%;
     vertical-align:top;
 }
@@ -79,20 +99,27 @@ img.profile-pic {
 .image-overlay:after {
     content:'\A';
     width:100%; height:100%;
-    top:0; left:0;
-    background:rgba(0,0,0,0.6);
+    /* top:0;  */
+    bottom: 20px;
+    left:0;
+    background:rgba(0,0,0,0.4);
+    border-radius: 50%;
+    z-index: 9000;
 }
 .image-overlay:before {
     content: attr(data-content);
-    width:100%;
-    color:#fff;
-    z-index:1;
-    bottom:0;
-    padding:4px 10px;
-    text-align:center;
-    background:grey;
-    box-sizing:border-box;
-    -moz-box-sizing:border-box;
+    width: 95%;
+    left: 4px;
+    border-radius: 3px;
+    color: #fff;
+    z-index: 5555;
+    /* bottom: 0; */
+    bottom: 50%;
+    padding: 4px 10px;
+    text-align: center;
+    background: rgba(128, 128, 128, 0.55);
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
 }
 .image-overlay:hover:after, .image-overlay:hover:before {
     opacity:1;
@@ -173,13 +200,13 @@ body {
     letter-spacing: .02em;
 }
 
-h1 {  font-family: 'MuseoSlab-700', Helvetica, Arial, sans-serif;  }
-
+/* h1 {  font-family: 'MuseoSlab-700', Helvetica, Arial, sans-serif;  } */
+/* 
 h2, h3, h4, h5, h6 {
     color: #000;
     font-family: 'MuseoSlab-700', Helvetica, Arial, sans-serif;
     font-size: 2.2em;
-}
+} */
 
 video {
     margin-top: 150px;
@@ -564,6 +591,11 @@ video {
 
 
 
+.box ul {
+    margin-left: -30px;
+}
+
+
 
 /*------------------------------------*\
     #PROFILE-SECTION
@@ -623,7 +655,7 @@ video {
     background-image: url(../img/profile-img-placeholder.png);
     background-position: center;
     background-repeat: no-repeat;
-    border: 4px solid #999;
+    border: 4px solid #f1f1f1;
     position: absolute;
     margin-top: -20px;
     left: 0;

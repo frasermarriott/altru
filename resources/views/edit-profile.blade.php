@@ -3,10 +3,21 @@
 @section('title', 'Edit Profile')
 
 @section('content')
+
+
+    <section class="profile-img-banner">
+<div data-content="Change profile picture" class="image-overlay">
+        <div class="profile-img"><img class="profile-pic" src="/img/uploads/profile-pics/{{$user->profile_img}}" alt="My profile picture"></div>
+</div>
+        <div class="banner-col-A"></div><div class="banner-col-B"></div><div class="banner-col-C"></div><div class="banner-col-D"></div><div class="banner-col-E"></div>
+
+    </section>
+
+
 <div class="container">
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
-            <div class="panel panel-default">
+            <div class="panel panel-default custom-panel">
                 <div class="panel-heading">Edit Profile</div>
 
                 <div class="panel-body">
@@ -17,19 +28,9 @@
 
 
 
-<div class="row">
+<div class="container">
 
-                        <!-- Profile Picture -->
-                        <div class="col-lg-5">
-
-                            <div data-content="Change profile picture" class="image-overlay">
-                                <div id="profile-image">
-                                    <img class="profile-pic" src="../img/uploads/profile-pics/{{$user->profile_img}}" alt="Edit my profile picture">
-                                </div>
-                            </div>
-
-                        </div>
-
+       
                         <!-- About section -->
                         <div class="col-lg-6">
 
@@ -102,18 +103,9 @@
 @elseif($profiletype=='volunteer') 
 
 
-                    <div class="row">
+                    <div class="container">
 
-                        <!-- Profile Picture -->
-                        <div class="col-lg-5">
 
-                            <div data-content="Change profile picture" class="image-overlay">
-                                <div id="profile-image">
-                                    <img class="profile-pic" src="../img/uploads/profile-pics/{{$user->profile_img}}" alt="Edit my profile picture">
-                                </div>
-                            </div>
-
-                        </div>
 
                         <!-- About section -->
                         <div class="col-lg-6">
