@@ -1,0 +1,110 @@
+@media only screen and (min-width: 320px) and (max-width: 568px) {
+    .headerSection {
+        width: 21em;
+        text-align: center;
+    }
+    .mainLogo {
+        width: 100%;
+        margin-top: 6em;
+        margin-bottom: 1em;
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .mainHeadings {
+        color: #000;
+        font-family: 'MuseoSlab-700', Helvetica, Arial, sans-serif;
+        line-height: 1.6;
+        font-size: 1.3em;
+    }
+    .bodyText {
+        margin-top: 1em;
+        margin-bottom: 1em;
+        font-family: 'MuseoSans-300', Helvetica, Arial, sans-serif;
+        color: #000;
+        font-size: 1em;
+        line-height: 1.6;
+        letter-spacing: 0.02em;
+        text-align: left;
+    }
+    .mainSquareContainer {
+        margin-top: 40px;
+        display: flex;
+        height: 100vh-100px;
+        width: 100vw;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+    .squares {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        height: 100vh-100px;
+        width: 100vw;
+    }
+
+    .box {
+        width: 50%;
+        height: 33.333333333%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .panelIcons {
+        color: #fff;
+        margin: 0 auto;
+        padding: 0;
+        font-size: 2em;
+        left: 1.5em;
+        bottom: 0.2em;
+    }
+    .panelHeadings {
+        font-family: 'MuseoSlab-500', Helvetica, Arial, sans-serif;
+        color: #fff;
+        padding-top: 1em;
+        font-size: 1.1em;
+    }
+    .footerText {
+        color: #fff;
+        font-family: 'MuseoSlab-300', Helvetica, Arial, sans-serif;
+        letter-spacing: 0.02em;
+        font-size: 1em;
+    }
+    .socialIconsFooter {
+        padding: 0.6em;
+    }
+    footer {
+        margin-top: 0vh;
+    }
+    .navbar-header {
+        padding: 0;
+    }
+
+}
+
+@media only screen and (min-width: 320px) and (max-width: 800px) {
+    .navLogo {
+        margin-left: 30px;
+
+    }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 993px) {
+    .profile-creation-area {
+        display: flex;
+        height: 55em;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+}
+
+
+
+/* Collapsed nav width on tablet */
+
+@media (min-width: 768px) {
+nav .container {
+    width: 100% !important;
+}

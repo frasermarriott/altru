@@ -13,11 +13,11 @@
 
     <!-- Styles -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/css/style.css" rel="stylesheet">
-    <!-- <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.1/themes/base/minified/jquery-ui.min.css" type="text/css" />  -->
-    <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/ui-lightness/jquery-ui.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/MyFontsWebfontsKit.css">
 
-    {{-- <link href="{{ elixir('css/app.css') }}" rel="stylesheet"> --}}
+
+
 
     <style>
         body {
@@ -43,8 +43,8 @@
                 </button>
 
                 <!-- Branding Image -->
-                <a class="navbar-brand notranslate" href="{{ url('/') }}">
-                    Altru
+                <a class="navbar-brand navLogo notranslate" href="{{ url('/') }}">
+                    
                 </a>
             </div>
 
