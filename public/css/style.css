@@ -450,13 +450,29 @@ video {
     padding-bottom: 60px;
 }
 
+.video-container {
+    /* background-color: rgba(189, 167, 55, 0.4); */
+    background: url('/video/video-overlay.png');
+    width: 100%;
+    height: 100%;
+    margin-top: -20px;
+}
+
+.welcome {
+    margin-top: 10%;
+}
+
 .welcome-text {
     padding: 20px;
     font-family: 'MuseoSlab-700', Helvetica, Arial, sans-serif;
-    font-size: 3em;
+    font-size: 2em;
     text-align: center;
     color: #FFFFFF;
+
 }
+
+
+
 
 .welcome-buttons {
     width: 350px;

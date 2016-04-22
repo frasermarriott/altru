@@ -100,8 +100,13 @@
 /* Collapsed nav width on tablet */
 
 @media (min-width: 768px) {
-nav .container {
-    width: 100% !important;
+    nav .container {
+        width: 100% !important;
+    }
+
+/*     .welcome-text {
+        font-size: 2em;
+    } */
 }
 
 
