@@ -346,16 +346,18 @@ video {
 }
 
 .esi_ribbon {
+    background: url('/img/altru-ribbon3.png');
     /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#244652+0,289c8e+25,e8c269+50,f3a060+75,e76e50+100 */
-    background: #244652; /* Old browsers */
-    background: -moz-linear-gradient(left, #244652 0%, #289c8e 25%, #e8c269 50%, #f3a060 75%, #e76e50 100%); /* FF3.6-15 */
-    background: -webkit-linear-gradient(left, #244652 0%,#289c8e 25%,#e8c269 50%,#f3a060 75%,#e76e50 100%); /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to right, #244652 0%,#289c8e 25%,#e8c269 50%,#f3a060 75%,#e76e50 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#244652', endColorstr='#e76e50',GradientType=1 ); /* IE6-9 */
+    /* background: #244652; /* Old browsers */ 
+    /* background: -moz-linear-gradient(left, #244652 0%, #289c8e 25%, #e8c269 50%, #f3a060 75%, #e76e50 100%); /* FF3.6-15 */ 
+    /* background: -webkit-linear-gradient(left, #244652 0%,#289c8e 25%,#e8c269 50%,#f3a060 75%,#e76e50 100%); /* Chrome10-25,Safari5.1-6 */ 
+    /* background: linear-gradient(to right, #244652 0%,#289c8e 25%,#e8c269 50%,#f3a060 75%,#e76e50 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */ */
+    /* filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#244652', endColorstr='#e76e50',GradientType=1 ); /* IE6-9 */ 
+
 }
 
 .body_ribbon {
-    height: 5px;
+    height: 4px;
     position: relative;
     width: 100%;
     z-index: 3;
