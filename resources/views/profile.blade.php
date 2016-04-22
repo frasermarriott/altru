@@ -4,6 +4,7 @@
 
 @section('content')
 
+<div id="wrap">
 
     <section class="profile-img-banner">
 
@@ -133,4 +134,6 @@
         </div>
     </div>
 </div>
+
+</div><!-- wrap -->
 @endsection

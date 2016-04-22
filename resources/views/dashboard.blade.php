@@ -3,8 +3,8 @@
 @section('title', 'My Dashboard')
 
 @section('content')
-
-
+<div id="wrap">
+<div id="centered">
 @if($profiletype=='guest')
     
     <section class="mainSquareContainer">
@@ -141,6 +141,10 @@
 
 
 @endif
+</div><!--centered-->
+</div><!--wrap-->
+
+<div id="footer">
     <footer class="footer-dashboard">
         <div class="container-fluid">
             <p class="footerText">Connect with Altru on social media
@@ -155,6 +159,7 @@
             </ul>
         </div>
     </footer>
+</div>
 
 @endsection
 

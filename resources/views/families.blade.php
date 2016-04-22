@@ -3,6 +3,8 @@
 @section('title', 'Find a family')
 
 @section('content')
+<div id="wrap">
+
 <div class="container">
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
@@ -49,9 +51,9 @@
                             <p><strong class="search_location_label">
 
                             @if($volunteer->location == $current_user_location)
-                                <span class="label label-success label-location">{{ ucwords($volunteer->location) }}</span>
+                                <span class="label label-location label-custom-green">{{ ucwords($volunteer->location) }}</span>
                             @else
-                                <span class="label label-info label-location">{{ ucwords($volunteer->location) }}</span>
+                                <span class="label label-location label-custom-amber">{{ ucwords($volunteer->location) }}</span>
                             @endif
 
                             </strong> - <strong> {{ ucwords($volunteer->family_name)}} </strong> <small>- {{ str_limit($volunteer->about_family, $limit = 100, $end='...')}}</small>
@@ -82,7 +84,6 @@
 </div>
 
 
-
-
+</div>
 @endsection
 

@@ -45,6 +45,10 @@ class HomeController extends Controller
             $profile_details_exist = DB::table('families')->where('user_id', $current_user)->where('location', '=', '')->get();
         }
 
+        if($profiletype=='admin') {
+           return redirect()->route('admin-dashboard');
+        }
+
 
         return view('profile',['user'=>$user, 'profiletype'=>$profiletype, 'profile_details_exist' => $profile_details_exist]);
     }

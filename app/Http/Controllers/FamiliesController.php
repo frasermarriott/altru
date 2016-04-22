@@ -20,6 +20,10 @@ class FamiliesController extends Controller
             if(Auth::user()->verified!=='yes'){
                 return redirect('/')->with('verification_error', 'Sorry, you can not yet access this page as your account has not been verified by our team');
             }
+
+            elseif(Auth::user()->usertype=='volunteer'){
+                return redirect('/guests');
+            }
         }
 
         // Get search term 

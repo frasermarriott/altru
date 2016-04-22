@@ -3,6 +3,8 @@
 @section('title', 'Find a guest')
 
 @section('content')
+<div id="wrap">
+
 <div class="container">
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
@@ -18,7 +20,7 @@
 
                         <div class="input-group has-feedback">
 
-                            <input type="text" class="form-control hasclear" name="search" id="search" aria-label="search by location" value="{{$search_term}}" placeholder="Search by location" required>
+                            <input type="text" class="form-control hasclear" name="search" id="search" aria-label="search by location" value="{{$search_term}}" placeholder="Search by location" required autofocus>
 
 
                             <span class="input-group-btn">
@@ -36,6 +38,9 @@
                         <br>
                         <p><small>Showing results for <strong>"{{ ucwords($search_term) }}"</strong></small></p>
                         <small><a href="{{ url('guests') }}">Show all</a> </small>
+                    @else
+                        <br>
+                        <p><small>Showing all results</small></p>
                     @endif
 
 
@@ -49,14 +54,14 @@
                             <p><strong class="search_location_label">
 
                             @if($guest->location == $current_user_location)
-                                <span class="label label-success label-location">{{ ucwords($guest->location) }}</span>
+                                <span class="label label-location label-custom-green">{{ ucwords($guest->location) }}</span>
                             @else
-                                <span class="label label-info label-location">{{ ucwords($guest->location) }}</span>
+                                <span class="label label-location label-custom-amber">{{ ucwords($guest->location) }}</span>
                             @endif
 
-                            </strong> - <strong> {{ ucwords($guest->first_name)}} </strong> <small>- {{ str_limit($guest->about_me, $limit = 100, $end='...')}}</small>
+                            </strong> - <strong> {{ ucwords($guest->first_name)}} {{ ucwords($guest->last_name)}}</strong> <small>- {{ str_limit($guest->about_me, $limit = 100, $end='...')}}</small>
 
-                            <a href="{{ route('view_guest', array('id' => $guest->user_id)) }}" class="btn btn-link link-to-profile">...read more</a></p> 
+                            <a href="{{ route('view_guest', array('id' => $guest->user_id)) }}" class="btn btn-link link-to-profile">...Read more</a></p> 
                             
                             
                     @endforeach
@@ -83,6 +88,6 @@
 
 
 
-
+</div
 @endsection
 

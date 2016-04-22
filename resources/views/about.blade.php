@@ -3,7 +3,7 @@
 @section('title', 'About Us')
 
 @section('content')
-
+<div id="wrap">
 
     <div class="container">
 
@@ -29,6 +29,6 @@
 
     </div>
 
-
+</div>
 @endsection
 

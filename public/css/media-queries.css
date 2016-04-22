@@ -27,7 +27,8 @@
         text-align: left;
     }
     .mainSquareContainer {
-        margin-top: -20px;
+        /* margin-top: -20px; */
+        margin-top: -50px;
         display: flex;
         height: 100vh-100px;
         width: 100vw;

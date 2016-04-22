@@ -3,6 +3,10 @@
 @section('title', 'Register')
 
 @section('content')
+
+<div id="wrap">
+<div id="centered">
+
 <div class="container">
     <div class="row">
         <div class="col-md-10 col-md-offset-1 usertype-box">
@@ -34,5 +38,8 @@
           
         </div>
     </div>
+</div>
+
+</div>
 </div>
 @endsection

@@ -1,4 +1,5 @@
  @section('footer')
+ <div id="footer">
     <footer>
         <div class="container-fluid">
             <p class="footerText">Connect with Altru on social media
@@ -13,3 +14,4 @@
             </ul>
         </div>
     </footer>
+</div><!--footer-->
