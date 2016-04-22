@@ -23,6 +23,10 @@ body {
      Registration
 ###############################*/
 
+.usertype-box {
+    margin-top: 22px;
+}
+
 .usertype-btn {
 	height: 70vh;
 }
@@ -633,6 +637,10 @@ video {
 
 .box3text {
     margin-left: -10px;
+}
+
+.box5icon {
+    margin-left: -3px;
 }
 
 @media only screen and (min-width: 240px) and (max-width: 350px) {

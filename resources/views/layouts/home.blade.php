@@ -96,6 +96,7 @@
 
                         <!-- If user is not an Admin - display this: -->
                         @if(\Auth::user()->usertype!=='admin')
+                            <li class="{{ Request::path() == 'about' ? 'active' : '' }}"><a href="{{ url('/about') }}">About</a></li>
                             <li class="{{ Route::currentRouteNamed('dashboard') ? 'active' : '' }}"><a href="{{ url('/dashboard') }}">My Dashboard</a></li>
                             <li @if((Route::currentRouteNamed('profile'))||(Route::currentRouteNamed('editprofile'))) class="active"@endif>
                                 <a href="{{ url('/profile') }}">My Profile</a></li>
@@ -109,6 +110,7 @@
                     
                     <!-- Show these links only if user is not logged in -->
                     @if (Auth::guest())
+                        <li class="{{ Request::path() == 'about' ? 'active' : '' }}"><a href="{{ url('/about') }}">About</a></li>
                         <li class="{{ Route::currentRouteNamed('dashboard') ? 'active' : '' }}">
                             <a href="{{ url('/dashboard') }}">My Dashboard</a></li>
                         <li><a href="{{ url('/profile') }}">My Profile</a></li>

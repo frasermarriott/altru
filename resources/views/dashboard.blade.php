@@ -44,7 +44,7 @@
             <div class="box box5">
                 <a href="{{ url('about') }}" class="box-link">
                     <ul>
-                        <li class="listPanel"><i class="fa fa-info-circle fa-3x panelIcons hvr-icon-pulse"></i></li>
+                        <li class="listPanel"><i class="fa fa-info-circle fa-3x panelIcons hvr-icon-pulse box5icon"></i></li>
                         <li class="listPanel">
                             <h4 class="panelHeadings box5text">ABOUT US</h4></li>
                     </ul>
@@ -114,7 +114,7 @@
                     <ul>
                         <li class="listPanel"><i class="fa fa-info-circle fa-3x panelIcons hvr-icon-pulse"></i></li>
                         <li class="listPanel">
-                            <h4 class="panelHeadings">ABOUT US</h4></li>
+                            <h4 class="panelHeadings box5text">ABOUT US</h4></li>
                     </ul>
                 </a>
             </div>
@@ -123,7 +123,7 @@
                     <ul>
                         <li class="listPanel"><i class="fa fa-sign-out fa-3x panelIcons hvr-icon-pulse"></i></li>
                         <li class="listPanel">
-                            <h4 class="panelHeadings">LOG OUT</h4></li>
+                            <h4 class="panelHeadings box6text">LOG OUT</h4></li>
                     </ul>
                 </a>
             </div>

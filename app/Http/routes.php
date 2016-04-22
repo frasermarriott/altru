@@ -19,6 +19,14 @@ Route::get('about', function () {
     return view('about');
 });
 
+Route::get('privacy', function () {
+    return view('privacy');
+});
+
+Route::get('getverified', function () {
+    return view('getverified');
+});
+
 Route::get('register/usertype', function () {
     return view('auth.usertype-registration');
 });
