@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.home')
 
 @section('title', 'Home')
 
@@ -25,8 +25,10 @@
                     </p>
 
                 <div class="welcome-buttons">
-                    <button class="btn btn-default btn-altru-white" type="button" onclick="location.href='https://vimeo.com/163542969';">Play Video</button>
-                    <button class="btn btn-default btn-altru-white" type="button" onclick="location.href='/login';">Log in</button>
+                    <!-- <button class="btn btn-default btn-altru-white" type="button" onclick="location.href='https://vimeo.com/163542969';">About Us</button> -->
+                    <!-- <button class="btn btn-default btn-altru-white" type="button" onclick="location.href='/login';">Log in</button> -->
+                    <a class="btn btn-default btn-altru-white" href="{{ url('about') }}">About Us</a>
+                    <a class="btn btn-default btn-altru-white" href="{{ url('register/usertype') }}">Join Now</a>
                 </div>
 
 

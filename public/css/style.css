@@ -491,19 +491,27 @@ video {
 
 .btn-altru-white {
     width: 150px;
-    height: 65px;
+    /* height: 65px; */
     font-size: 1.3em;
     font-weight: bold;
     color: #FFFFFF;
-    border: #ffffff 5px solid;
+    border: #ffffff 1px solid;
     text-transform: uppercase;
     background: transparent;
 }
 
 .btn-altru-white:hover {
+    background: rgba(185, 184, 184, 0.12);
+    /* color: #39b3d7; */
+    /* border: #39b3d7 1px solid; */
+    color: #f1f1f1;
+    border: #f1f1f1 1px solid;
+}
+
+.btn-altru-white:focus {
     background: transparent;
-    color: #39b3d7;
-    border: #39b3d7 5px solid;
+    color: #f1f1f1;
+    border: #f1f1f1 1px solid;
 }
 
 .video-overlay {
@@ -605,13 +613,35 @@ video {
 }
 
 
-
-
 .box ul {
     margin-left: -30px;
 }
 
+.box-link {
+    width: 100%;
+    padding: 50px;
+    white-space: nowrap;
+}
 
+.box-link a:focus, a:hover {
+    color: #23527c;
+    text-decoration: none !important;
+}
+
+.box3text {
+    margin-left: -10px;
+}
+
+@media only screen and (min-width: 240px) and (max-width: 350px) {
+
+    .box2text {
+        margin-left: -20px;
+    }
+
+    .box3text {
+        margin-left: -30px;
+    }
+}
 
 /*------------------------------------*\
     #PROFILE-SECTION
@@ -694,7 +724,8 @@ video {
 \*------------------------------------*/
 
 footer {
-    height: 100px;
+    /* height: 100px; */
+    margin-top: 50px;
     width: 100%;
     position: absolute;
     background-color: #1E756B;

@@ -219,7 +219,7 @@ class HomeController extends Controller
   
 
         
-        return view('dashboard');
+        return view('dashboard',['user'=>$user, 'profiletype'=>$profiletype, 'current_user' => $current_user]);
         
     }
 
