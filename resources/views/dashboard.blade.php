@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.home')
 
 @section('title', 'My Dashboard')
 
@@ -55,7 +55,7 @@
                     <ul>
                         <li class="listPanel"><i class="fa fa-sign-out fa-3x panelIcons hvr-icon-pulse"></i></li>
                         <li class="listPanel">
-                            <h4 class="panelHeadings">LOG OUT</h4></li>
+                            <h4 class="panelHeadings box6text">LOG OUT</h4></li>
                     </ul>
                 </a>
             </div>
@@ -141,6 +141,20 @@
 
 
 @endif
-
+    <footer class="footer-dashboard">
+        <div class="container-fluid">
+            <p class="footerText">Connect with Altru on social media
+                <a href="http://www.facebook.com" target="_blank" class="fa fa-facebook socialIconsFooter"></a>
+                <a href="http://www.twitter.com" target="_blank" class="fa fa-twitter socialIconsFooter"></a>
+                <a href="http://www.youtube.com" target="_blank" class="fa fa-youtube socialIconsFooter"></a>
+            </p>
+            <ul class="footerInfoText">
+                <li><a href="{{ url('about') }}">About Us</a></li>
+                <li><a href="{{ url('privacy') }}">Privacy Policy</a></li>
+                <li>&#169; 2016 Altru &middot; All Rights Reserved </li>
+            </ul>
+        </div>
+    </footer>
 
 @endsection
+

@@ -81,6 +81,11 @@
         padding: 0;
     }
 
+    .footer-dashboard {
+        display: none;
+        visibility: hidden;
+    }
+
 }
 
 

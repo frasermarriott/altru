@@ -346,7 +346,7 @@ video {
 }
 
 .esi_ribbon {
-    background: url('/img/altru-ribbon3.png');
+    background: url('/img/altru-ribbon.png');
     /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#244652+0,289c8e+25,e8c269+50,f3a060+75,e76e50+100 */
     /* background: #244652; /* Old browsers */ 
     /* background: -moz-linear-gradient(left, #244652 0%, #289c8e 25%, #e8c269 50%, #f3a060 75%, #e76e50 100%); /* FF3.6-15 */ 
@@ -537,6 +537,7 @@ video {
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    margin-bottom: 40px;
 /* container must have a 'height' for aling items to work */
 /* border: 10px solid #000; */
 }
@@ -643,6 +644,20 @@ video {
     .box3text {
         margin-left: -30px;
     }
+
+    .box5text {
+        margin-left: -12px;
+    }
+
+    .box6text {
+        margin-left: -10px;
+    }
+}
+
+@media only screen and (min-width: 230px) and (max-width: 330px) {
+    .box3text {
+        margin-left: -35px;
+    }
 }
 
 /*------------------------------------*\
@@ -721,6 +736,35 @@ video {
 
 }
 
+
+/*------------------------------------*\
+    #ABOUT-SECTION
+\*------------------------------------*/
+
+/* .altru-vimeo-embed {
+    height: auto;
+    width: 100%;
+} */
+
+/* Video */
+
+.embed-container { 
+    position: relative; 
+    padding-bottom: 56.25%; 
+    height: 0; 
+    overflow: hidden; 
+    max-width: 100%;
+} 
+.embed-container iframe, .embed-container object, .embed-container embed {
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%;
+}
+
+
+
 /*------------------------------------*\
     #FOOTER-SECTION
 \*------------------------------------*/
@@ -729,6 +773,7 @@ footer {
     /* height: 100px; */
     margin-top: 50px;
     width: 100%;
+    /* bottom: 0; */
     position: absolute;
     background-color: #1E756B;
 }
@@ -757,31 +802,44 @@ footer {
     padding-left: 20px;
 }
 
-.socialIconsFooter:link {
+.footerInfoText li a {
+    color: #fff;
+}
+
+.footerInfoText li a:hover {
+    color: rgba(255, 255, 255, 0.72);
+}
+
+
+.footerText a:link {
     font-size: 1.2em;
     padding: .6em;
     color: #fff;
     text-decoration: none;
 }
 
-.socialIconsFooter:hover {
-    color: #999;
+.footerText a:hover {
+    color: rgba(255, 255, 255, 0.72);
     text-decoration: none;
 }
 
-.socialIconsFooter:active {
+.footerText a:active {
     color: #fff;
+    text-decoration: none;
 }
 .socialIconsFooter:focus {
+    color: rgba(255, 255, 255, 0.72);
+    text-decoration: none;
+}
+
+.socialIconsFooter:visited {
     color: #fff;
+    text-decoration: none;
 }
 
 .noselect {
     -webkit-touch-callout: none;
     -webkit-user-select: none;
-/* Webkit */
     -moz-user-select: none;
-/* Firefox */
     -ms-user-select: none;
-/* IE 10  */
 }

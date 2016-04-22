@@ -7,9 +7,9 @@
                 <a href="http://www.youtube.com" target="_blank" class="fa fa-youtube socialIconsFooter"></a>
             </p>
             <ul class="footerInfoText">
-                <li><a href="/#">About Us</a></li>
-                <li><a href="/#">Privacy Policy</a></li>
-                <li>Copyright Altru &#169; 2016</li>
+                <li><a href="{{ url('about') }}">About Us</a></li>
+                <li><a href="{{ url('privacy') }}">Privacy Policy</a></li>
+                <li>&#169; 2016 Altru &middot; All Rights Reserved </li>
             </ul>
         </div>
     </footer>
