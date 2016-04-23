@@ -14,6 +14,10 @@
                 <div class="panel-body">
 
                 
+                    <ol class="breadcrumb">
+                      <li><a href="{{ url('dashboard') }}">My Dashboard</a></li>
+                      <li class="active">Guests</li>
+                    </ol>
 
                     <!-- placeholder form. Change to laravel format later -->
                     <form method="">
@@ -39,14 +43,13 @@
                         <p><small>Showing results for <strong>"{{ ucwords($search_term) }}"</strong></small></p>
                         <small><a href="{{ url('guests') }}">Show all</a> </small>
                     @else
-                        <br>
-                        <p><small>Showing all results</small></p>
+                        
                     @endif
 
 
 
 
-                {{--$current_user_location--}}
+                {{--
 
           
                     @foreach($guest_list as $guest)
@@ -64,6 +67,57 @@
                             <a href="{{ route('view_guest', array('id' => $guest->user_id)) }}" class="btn btn-link link-to-profile">...Read more</a></p> 
                             
                             
+                    @endforeach
+
+
+                --}}
+
+
+
+
+                <br>
+                    @foreach($guest_list as $guest)
+
+                        @if($guest->location == $current_user_location)
+                            <div class="panel panel-success">
+                        @else
+                            <div class="panel panel-info">
+                        @endif
+
+                                <div class="panel-heading">{{ ucwords($guest->location) }}</div>
+
+                                <div class="panel-body">
+
+                                    <div class="row">
+
+                                        <!-- PROFILE IMAGE -->
+                                        <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
+
+                                            <div class="profile-thumbnail-container">
+                                                <img src="img/uploads/profile-pics/{{ $guest->profile_img }}" class="profile-thumbnail" alt="{{ ucwords($guest->first_name)}}'s Profile picture."> 
+                                            </div>
+
+                                        </div><!--col-->
+
+                                        <!-- ABOUT TEXT -->
+                                        <div class="col-lg-8 col-md-8 col-sm-7 col-xs-12">
+
+                                            <strong>{{ ucwords($guest->first_name)}} {{ ucwords($guest->last_name)}}</strong>
+
+                                            <p>{{ str_limit($guest->about_me, $limit = 250, $end='...')}}</p>
+
+                                            <p><a href="{{ route('view_guest', array('id' => $guest->user_id)) }}" class="btn btn-default btn-sm">Visit profile</a></p> 
+
+                                        </div><!--col-->
+
+                                    </div><!--row-->
+
+                                </div>
+
+                            </div>
+
+
+
                     @endforeach
 
              

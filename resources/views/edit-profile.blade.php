@@ -7,7 +7,7 @@
 
     <section class="profile-img-banner">
 <div data-content="Change profile picture" class="image-overlay">
-        <div class="profile-img"><img class="profile-pic" src="/img/uploads/profile-pics/{{$user->profile_img}}" alt="My profile picture"></div>
+        <div class="profile-img"><img class="profile-pic" src="../img/uploads/profile-pics/{{$user->profile_img}}" alt="My profile picture"></div>
 </div>
         <div class="banner-col-A banner-col-all"></div><div class="banner-col-B banner-col-all"></div><div class="banner-col-C banner-col-all"></div><div class="banner-col-D banner-col-all"></div><div class="banner-col-E banner-col-all"></div>
 

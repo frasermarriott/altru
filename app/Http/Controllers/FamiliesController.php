@@ -34,7 +34,7 @@ class FamiliesController extends Controller
             $volunteer_list = DB::table('families')->where('location', 'LIKE', '%'.$search_term.'%')->whereExists(function ($query) {
                 $query->select(DB::raw('id'))
                       ->from('users')
-                      ->whereRaw('users.id = families.user_id')->where('verified', '=', 'yes'); })->paginate(10);
+                      ->whereRaw('users.id = families.user_id')->where('verified', '=', 'yes'); })->paginate(5);
         }
         else{
 
@@ -42,7 +42,7 @@ class FamiliesController extends Controller
     	$volunteer_list = DB::table('families')->where('location', '!=', '')->whereExists(function ($query) {
                 $query->select(DB::raw('id'))
                       ->from('users')
-                      ->whereRaw('users.id = families.user_id')->where('verified', '=', 'yes'); })->paginate(10);
+                      ->whereRaw('users.id = families.user_id')->where('verified', '=', 'yes'); })->paginate(5);
         }
 
         // Check if user is logged in, if so, get their location.

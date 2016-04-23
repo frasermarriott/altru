@@ -162,6 +162,19 @@ img.profile-pic-square {
     /* float: right; */
 }
 
+.profile-thumbnail-container {
+    width: 150px;
+}
+
+.profile-thumbnail {
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .profile-thumbnail-container {
+        margin: 0 auto;
+    }
+}
 
 
 
@@ -363,7 +376,7 @@ video {
 }
 
 .esi_ribbon {
-    background: url('/img/altru-ribbon.png');
+    background: url('../img/altru-ribbon.png');
     /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#244652+0,289c8e+25,e8c269+50,f3a060+75,e76e50+100 */
     /* background: #244652; /* Old browsers */ 
     /* background: -moz-linear-gradient(left, #244652 0%, #289c8e 25%, #e8c269 50%, #f3a060 75%, #e76e50 100%); /* FF3.6-15 */ 
@@ -471,7 +484,8 @@ video {
 
 .video-container {
     /* background-color: rgba(189, 167, 55, 0.4); */
-    background: url('/video/video-overlay.png');
+    /* background: url('/video/video-overlay.png'); */
+    background-image: url('../video/video-overlay.png');
     width: 100%;
     height: 100%;
     margin-top: -20px;
@@ -970,11 +984,23 @@ i.verify-icons {
     -webkit-font-smoothing: antialiased;
 }
 
+@media (max-width: 540px) {
+    i.verify-icons {
+        font-size: 10em;
+    }
+    .light {
+        -webkit-text-stroke: 1px #fff !important;
+    }
+
+}
+
+
+
 .center-verify-icons {
     text-align: center;
 }
 
-.light{
+.light {
     -webkit-text-stroke: 10px #fff;
 }
 

@@ -12,7 +12,15 @@
                 <div class="panel-heading notranslate">{{ ucwords($family->family_name) }}</div>
 
                 <div class="panel-body">
-                    <a href="{{URL::previous()}}" class="btn btn-link btn-sm">&laquo; Back</a>
+
+                    <ol class="breadcrumb">
+                      <li><a href="{{ url('dashboard') }}">My Dashboard</a></li>
+                      <li><a href="{{URL::previous()}}">Volunteers</a></li>
+                      <li class="active">{{ ucwords($family->family_name) }}</li>
+                    </ol>
+
+                    <hr>
+    
 
                     <div class="row">
 

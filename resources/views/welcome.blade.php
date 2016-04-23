@@ -18,7 +18,7 @@
     <div class="row">
         <div class="col-lg-10 col-md-offset-1">
             <div class="welcome">
-                <img class="img-responsive center-block altru-logo-video-overlay" src="img/altru-main-logo3.png" alt="Main logo for altru">
+                <img class="img-responsive center-block altru-logo-video-overlay" src="{{ asset('img/altru-main-logo3.png') }}" alt="Main logo for Altru">
                     <p class="welcome-text">
                         Connect with loved ones, volunteer
                         &amp; aid those who need a helping hand
@@ -38,15 +38,15 @@
     </div>
 </div>
 <div>
-    <video class="video-background" poster="img/video-poster.jpg"
+    <video class="video-background" poster="{{ asset('img/video-poster.jpg') }}"
            data-origin-x="20"
            data-origin-y="50"
            autoplay
            preload="auto"
-           loop="true">
+           loop="false">
 
-        <source class="video-overlay" src="/video/background1.webm" type="video/webm">
-        <source class="video-overlay" src="/video/background1.mp4" type="video/mp4">
+        <source class="video-overlay" src="{{ asset('video/background1.webm') }}" type="video/webm">
+        <source class="video-overlay" src="{{ asset('video/background1.mp4') }}" type="video/mp4">
 
 
     </video>

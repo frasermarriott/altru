@@ -13,7 +13,13 @@
 
                 <div class="panel-body">
 
-                    <a href="{{URL::previous()}}" class="btn btn-link btn-sm">&laquo; Back</a>
+                    <ol class="breadcrumb">
+                      <li><a href="{{ url('dashboard') }}">My Dashboard</a></li>
+                      <li><a href="{{URL::previous()}}">Guests</a></li>
+                      <li class="active">{{ ucwords($guest->first_name)}} {{ ucwords($guest->last_name)}}</li>
+                    </ol>
+
+                    <hr>
 
                     <div class="row">
 

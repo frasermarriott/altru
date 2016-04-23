@@ -33,7 +33,7 @@ class GuestsController extends Controller
             $guest_list = DB::table('guests')->where('location', 'LIKE', '%'.$search_term.'%')->whereExists(function ($query) {
                 $query->select(DB::raw('id'))
                       ->from('users')
-                      ->whereRaw('users.id = guests.user_id')->where('verified', '=', 'yes'); })->paginate(10);
+                      ->whereRaw('users.id = guests.user_id')->where('verified', '=', 'yes'); })->paginate(5);
         }
         else{
 
@@ -41,7 +41,7 @@ class GuestsController extends Controller
     	$guest_list = DB::table('guests')->where('location', '!=', '')->whereExists(function ($query) {
                 $query->select(DB::raw('id'))
                       ->from('users')
-                      ->whereRaw('users.id = guests.user_id')->where('verified', '=', 'yes'); })->paginate(10);
+                      ->whereRaw('users.id = guests.user_id')->where('verified', '=', 'yes'); })->paginate(5);
         }
 
         // Check if user is logged in, if so, get their location.

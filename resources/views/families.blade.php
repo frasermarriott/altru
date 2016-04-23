@@ -13,6 +13,10 @@
 
                 <div class="panel-body">
 
+                    <ol class="breadcrumb">
+                      <li><a href="{{ url('dashboard') }}">My Dashboard</a></li>
+                      <li class="active">Volunteers</li>
+                    </ol>
                 
 
                     <!-- placeholder form. Change to laravel format later -->
@@ -20,7 +24,7 @@
 
                         <div class="input-group has-feedback">
 
-                            <input type="text" class="form-control hasclear" name="search" id="search" aria-label="search by location" value="{{$search_term}}" placeholder="Search by location" required>
+                            <input type="text" class="form-control hasclear" name="search" id="search" aria-label="search by location" value="{{$search_term}}" placeholder="Search by location" required autofocus>
 
 
                             <span class="input-group-btn">
@@ -45,7 +49,7 @@
 
                 {{--$current_user_location--}}
 
-          
+          {{--
                     @foreach($volunteer_list as $volunteer)
                     <hr>
                             <p><strong class="search_location_label">
@@ -63,7 +67,59 @@
                             
                     @endforeach
 
-             
+            --}}
+
+            <br>
+                    @foreach($volunteer_list as $volunteer)
+
+                        @if($volunteer->location == $current_user_location)
+                            <div class="panel panel-success">
+                        @else
+                            <div class="panel panel-info">
+                        @endif
+
+                                <div class="panel-heading">{{ ucwords($volunteer->location) }}</div>
+
+                                <div class="panel-body">
+
+                                    <div class="row">
+
+                                        <!-- PROFILE IMAGE -->
+                                        <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
+
+                                            <div class="profile-thumbnail-container">
+                                                <img src="img/uploads/profile-pics/{{ $volunteer->profile_img }}" class="profile-thumbnail" alt="{{ ucwords($volunteer->family_name)}}'s Profile picture."> 
+                                            </div>
+
+                                        </div><!--col-->
+
+                                        <!-- ABOUT TEXT -->
+                                        <div class="col-lg-8 col-md-8 col-sm-7 col-xs-12">
+
+                                            <strong>{{ ucwords($volunteer->family_name)}}</strong>
+
+                                            <p>{{ str_limit($volunteer->about_family, $limit = 250, $end='...')}}</p>
+
+                                            <p><a href="{{ route('view_family', array('id' => $volunteer->user_id)) }}" class="btn btn-default btn-sm">Visit profile</a></p> 
+
+                                        </div><!--col-->
+
+                                    </div><!--row-->
+
+                                </div>
+
+                            </div>
+
+
+
+                    @endforeach
+
+
+
+
+
+
+
 
                     <!-- Display Pagination -->
                     {!! $volunteer_list->render() !!}
