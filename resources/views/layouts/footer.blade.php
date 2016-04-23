@@ -10,7 +10,7 @@
             <ul class="footerInfoText">
                 <li><a href="{{ url('about') }}">About Us</a></li>
                 <li><a href="{{ url('privacy') }}">Privacy Policy</a></li>
-                <li>&#169; 2016 Altru &middot; All Rights Reserved </li>
+                <li>&#169; 2016 <span class="notranslate">Altru</span> &middot; All Rights Reserved </li>
             </ul>
         </div>
     </footer>
