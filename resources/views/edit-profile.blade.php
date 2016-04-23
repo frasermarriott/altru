@@ -4,6 +4,7 @@
 
 @section('content')
 
+<div id="wrap">
 
     <section class="profile-img-banner">
 <div data-content="Change profile picture" class="image-overlay">
@@ -176,4 +177,6 @@
         </div>
     </div>
 </div>
+
+</div><!--wrap-->
 @endsection
