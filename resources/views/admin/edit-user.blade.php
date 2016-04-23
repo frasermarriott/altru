@@ -3,6 +3,8 @@
 @section('title', 'Edit User - Admin Dashboard')
 
 @section('content')
+<div id="wrap">
+
 <div class="container">
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
@@ -49,8 +51,9 @@
 
                                     <div class="form-group"> 
                                         {!! Form::submit("Update", ['class' => 'btn btn-primary']) !!}
+                                        <a href="{{URL::previous()}}" class="btn btn-default">Cancel</a>
                                     </div>
-                                    
+          
                                 
                                 {!! Form::close() !!}
 
@@ -70,5 +73,7 @@
             </div>
         </div>
     </div>
+</div>
+
 </div>
 @endsection

@@ -20,6 +20,9 @@ class GuestsController extends Controller
             if(Auth::user()->verified!=='yes'){
                 return redirect('/')->with('verification_error', 'Sorry, you can not yet access this page as your account has not been verified by our team');
             }
+            elseif(Auth::user()->usertype=='guest'){
+                return redirect('/families');
+            }
         }
 
         // Get search term 
@@ -61,6 +64,9 @@ class GuestsController extends Controller
         elseif(Auth::check()){
             if(Auth::user()->verified!=='yes'){
                 return redirect('/')->with('verification_error', 'Sorry, you can not yet access this page as your account has not been verified by our team');
+            }
+            elseif(Auth::user()->usertype=='guest'){
+                return redirect('/families');
             }
         }
         

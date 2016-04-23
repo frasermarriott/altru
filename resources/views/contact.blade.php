@@ -4,7 +4,7 @@
 
 @section('content')
 <div id="wrap">
-
+<div id="centered">
 <div class="container">
 
 
@@ -63,5 +63,6 @@
 
 </div>
 
+</div>
 </div>
 @endsection

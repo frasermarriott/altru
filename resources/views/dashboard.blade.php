@@ -30,11 +30,11 @@
                 </a>
             </div>
             <div class="box box3">
-                <a href="{{ url('getverified') }}" class="box-link">
+                <a href="{{ url('getstarted') }}" class="box-link">
                     <ul>
                         <li class="listPanel"><i class="fa fa-files-o fa-3x panelIcons hvr-icon-pulse"></i></li>
                         <li class="listPanel">
-                            <h4 class="panelHeadings box3text">GET VERIFIED</h4></li>
+                            <h4 class="panelHeadings box3text">GET STARTED</h4></li>
                     </ul>
                 </a>
             </div>
@@ -98,11 +98,11 @@
                 </a>
             </div>
             <div class="box box3">
-                <a href="{{ url('getverified') }}" class="box-link">
+                <a href="{{ url('getstarted') }}" class="box-link">
                     <ul>
                         <li class="listPanel"><i class="fa fa-files-o fa-3x panelIcons hvr-icon-pulse"></i></li>
                         <li class="listPanel">
-                            <h4 class="panelHeadings box3text">GET VERIFIED</h4></li>
+                            <h4 class="panelHeadings box3text">GET STARTED</h4></li>
                     </ul>
                 </a>
             </div>

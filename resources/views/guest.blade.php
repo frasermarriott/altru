@@ -3,6 +3,8 @@
 @section('title', 'Find a guest')
 
 @section('content')
+<div id="wrap">
+
 <div class="container">
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
@@ -11,6 +13,7 @@
 
                 <div class="panel-body">
 
+                    <a href="{{URL::previous()}}" class="btn btn-link btn-sm">&laquo; Back</a>
 
                     <div class="row">
 
@@ -18,7 +21,7 @@
                         <div class="col-lg-5">
 
                             <div id="profile-image">
-                                <img class="profile-pic" src="../img/uploads/profile-pics/{{$guest->profile_img}}">
+                                <img class="profile-pic-square" src="../img/uploads/profile-pics/{{$guest->profile_img}}">
                             </div>
 
                         </div>
@@ -64,5 +67,7 @@
             </div>
         </div>
     </div>
+</div>
+
 </div>
 @endsection

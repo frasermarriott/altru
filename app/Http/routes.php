@@ -23,8 +23,8 @@ Route::get('privacy', function () {
     return view('privacy');
 });
 
-Route::get('getverified', function () {
-    return view('getverified');
+Route::get('getstarted', function () {
+    return view('getstarted');
 });
 
 Route::get('register/usertype', function () {

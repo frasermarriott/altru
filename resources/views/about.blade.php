@@ -10,21 +10,24 @@
 
       <h1>About Altru</h1>
         <p>
-            In in orci vel sapien gravida molestie id quis felis. Fusce egestas convallis risus, id dictum lacus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent et nisi eget turpis pellentesque vestibulum a sed libero. Vestibulum eget orci ultrices, convallis dui non, vehicula lacus. Sed id risus ut diam lacinia sagittis. Vivamus libero elit, imperdiet vitae turpis sit amet, mollis commodo enim. Vestibulum ac mi urna. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+            In 2015, Europe started to experience a migrant and refugee crisis. One million migrants and refugees have entered Europe as of 22nd of December 2015.
+
+            These displaced people experienced a substantial necessity of support from the European Union and its member states. As such, an influx of refugees has been the experience of many people watching the crisis on the news and seeing refugees being taken into their country.
         </p>
 
         <!-- Video -->
         <div class='embed-container'><iframe src='https://player.vimeo.com/video/163542969?autoplay=0&byline=0&portrait=0' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
 
 
+        <h3>Our goals</h3>
         <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus placerat tempus aliquet. Mauris interdum vehicula tellus in cursus. Aliquam erat volutpat. Mauris at tempor est, non accumsan sem. Pellentesque porta orci nec odio consectetur feugiat sed ut felis. Quisque eu eros dui. Nulla tincidunt, tellus quis pharetra dignissim, lectus neque tempor nibh, et volutpat purus neque ac nisl. Pellentesque et ante ac nunc ultrices cursus nec lobortis enim. Sed vestibulum sit amet odio sed molestie. Curabitur mattis sem id nunc viverra, non malesuada dolor mollis. Aliquam imperdiet sapien vel felis ornare mollis. Aliquam pretium eu erat non molestie. Curabitur ac magna dapibus, egestas orci posuere, accumsan sapien. Aliquam eu finibus eros, ac imperdiet est.
+            Our plan is to help migrants to integrate with our society and help them through these difficult times. The Altru web app can be accessed by anyone via their smartphones or computers. People can sign up and see refugees in their local area that are in need of assistance and volunteer rooms for a guests to stay for a set period of time and receive free meals. We hope to relieve some of the pressure felt by refugee crisis centres in the worst affected areas. Both Volunteers and Guests are all background checked and required to complete a government PVG disclosure in order to provide protection to both sides.
         </p>
 
         
 
         <p>
-            Quisque at velit ipsum. Quisque imperdiet mi vulputate risus condimentum, et semper orci ultrices. Vestibulum at ex lacus. Aliquam volutpat arcu vel elementum tristique. Fusce iaculis volutpat tincidunt. Vivamus erat erat, hendrerit eget libero eget, pellentesque ultricies nisl. Phasellus scelerisque, sem vitae consequat eleifend, risus est pretium arcu, sed vestibulum dolor urna at enim. Vestibulum laoreet commodo auctor. Fusce egestas convallis risus, id dictum lacus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent et nisi eget turpis pellentesque vestibulum a sed libero. Vestibulum eget orci ultrices, convallis dui non, vehicula lacus.
+            
         </p>
 
     </div>
