@@ -42,8 +42,7 @@
            data-origin-x="20"
            data-origin-y="50"
            autoplay
-           preload="auto"
-           loop="false">
+           preload="auto">
 
         <source class="video-overlay" src="{{ asset('video/background1.webm') }}" type="video/webm">
         <source class="video-overlay" src="{{ asset('video/background1.mp4') }}" type="video/mp4">
