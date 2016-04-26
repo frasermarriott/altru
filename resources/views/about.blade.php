@@ -10,6 +10,9 @@
 
       <h1>About Altru</h1>
         <p>
+            Altru is a charity app that facilitates refugees with the means of finding a place to stay by connecting them with people in the local area who  may have extra space in their homes and can to offer assistance.
+        </p>
+        <p>
             In 2015, Europe started to experience a migrant and refugee crisis. One million migrants and refugees have entered Europe as of 22nd of December 2015.
 
             These displaced people experienced a substantial necessity of support from the European Union and its member states. As such, an influx of refugees has been the experience of many people watching the crisis on the news and seeing refugees being taken into their country.
@@ -23,6 +26,8 @@
         <p>
             Our plan is to help migrants to integrate with our society and help them through these difficult times. The Altru web app can be accessed by anyone via their smartphones or computers. People can sign up and see refugees in their local area that are in need of assistance and volunteer rooms for a guests to stay for a set period of time and receive free meals. We hope to relieve some of the pressure felt by refugee crisis centres in the worst affected areas. Both Volunteers and Guests are all background checked and required to complete a government PVG disclosure in order to provide protection to both sides.
         </p>
+
+        <a class="btn btn-primary" href="{{ url('/getstarted') }}"><span class="glyphicon glyphicon-info-sign"></span> Find out how to get started</a>
 
         
 

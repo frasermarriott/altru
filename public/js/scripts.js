@@ -4,14 +4,14 @@
 	});
 
         // Trigger home video on touch for mobiles that do not support autoplay videos.
-        var video = document.querySelector('video');
-        // use the whole window and a *named function*
-        window.addEventListener('touchstart', function videoStart() {
-          video.play();
-          console.log('first touch');
-          // remove from the window and call the function we are removing
-          this.removeEventListener('touchstart', videoStart);
-        });
+        // var video = document.querySelector('video');
+        // // use the whole window and a *named function*
+        // window.addEventListener('touchstart', function videoStart() {
+        //   video.play();
+        //   console.log('first touch');
+        //   // remove from the window and call the function we are removing
+        //   this.removeEventListener('touchstart', videoStart);
+        // });
 
 
         // var vid = document.getElementById('video-background');

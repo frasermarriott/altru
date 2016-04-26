@@ -491,7 +491,8 @@ video {
     /* background: url('/video/video-overlay.png'); */
     background-image: url('../video/video-overlay.png');
     width: 100%;
-    height: 100%;
+    /* height: 100%; */
+    min-height: 100%;
     margin-top: -20px;
 }
 
@@ -916,6 +917,12 @@ footer {
 #wrap {
     min-height: 100%;
     padding-bottom: 150px;
+    font-size: 16px;
+}
+
+#dashboard-wrap {
+    min-height: 100%;
+    padding-bottom: 150px;
 }
 
 #footer {
@@ -1007,4 +1014,13 @@ i.verify-icons {
 .light {
     -webkit-text-stroke: 10px #fff;
 }
+
+
+/* Fix alignment of main text on home page on iPad */
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+    .col-md-offset-1 {
+        margin-left: 0px !important;
+    }
+}
+
 

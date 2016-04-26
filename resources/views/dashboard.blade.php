@@ -3,7 +3,7 @@
 @section('title', 'My Dashboard')
 
 @section('content')
-<div id="wrap">
+<div id="dashboard-wrap">
 <div id="centered">
 @if($profiletype=='guest')
     
@@ -147,10 +147,11 @@
 <div id="footer">
     <footer class="footer-dashboard">
         <div class="container-fluid">
-            <p class="footerText">Connect with Altru on social media
-                <a href="http://www.facebook.com" target="_blank" class="fa fa-facebook socialIconsFooter"></a>
-                <a href="http://www.twitter.com" target="_blank" class="fa fa-twitter socialIconsFooter"></a>
-                <a href="http://www.youtube.com" target="_blank" class="fa fa-youtube socialIconsFooter"></a>
+            <p class="footerText">Connect with Altru on social media <br>
+                <a href="https://www.facebook.com/altruapp/" target="_blank" class="fa fa-facebook socialIconsFooter"></a>
+                <a href="https://twitter.com/AltruApp" target="_blank" class="fa fa-twitter socialIconsFooter"></a>
+                <a href="https://www.youtube.com/channel/UC2eudTDzCblkMzI2HeQHrLA/" target="_blank" class="fa fa-youtube socialIconsFooter"></a>
+                <a href="https://vimeo.com/altru" target="_blank" class="fa fa-vimeo socialIconsFooter"></a>
             </p>
             <ul class="footerInfoText">
                 <li><a href="{{ url('about') }}">About Us</a></li>
